@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf48smj3g2hok"]
+
+[ext_resource type="Script" path="res://scenes/minigames/BaseMinigame.gd" id="1_6qkdl"]
+[ext_resource type="AudioStream" uid="uid://c8ii6lmhhmr4v" path="res://audio/vc_menu_narration_enterring.wav" id="2_m00r1"]
+[ext_resource type="Texture2D" uid="uid://chhk0dea4uxp4" path="res://images/ziopera_title.png" id="3_5sg00"]
+[ext_resource type="Texture2D" uid="uid://ijbhmamed3ly" path="res://images/ROSSO.png" id="4_hphbd"]
+
+[node name="BaseMinigame" type="Node2D"]
+script = ExtResource("1_6qkdl")
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_m00r1")
+autoplay = true
+
+[node name="AnnouncerPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_m00r1")
+autoplay = true
+
+[node name="MinigameTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(547, 307)
+texture = ExtResource("3_5sg00")
+
+[node name="EndSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(566.75, 273.5)
+scale = Vector2(21.7656, 11.4063)
+texture = ExtResource("4_hphbd")
+
+[connection signal="finished" from="AnnouncerPlayer" to="." method="_on_announcer_player_finished"]
+[connection signal="timeout" from="MinigameTimer" to="." method="_on_minigame_timer_timeout"]
