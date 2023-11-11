@@ -7,6 +7,9 @@
 
 [node name="Main" parent="." index="0" instance=ExtResource("2_xmj5x")]
 
+[node name="MinigameTimer" parent="." index="3"]
+wait_time = 105.0
+
 [node name="TitleScreen" parent="." index="4"]
 z_index = 1
 y_sort_enabled = true
