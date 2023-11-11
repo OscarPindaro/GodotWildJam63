@@ -7,6 +7,7 @@ radius = 13.0
 height = 50.0
 
 [node name="crocchetta" type="RigidBody2D"]
+inertia = 1.0
 
 [node name="Crocchetta" type="Sprite2D" parent="."]
 texture = ExtResource("1_8h70q")
