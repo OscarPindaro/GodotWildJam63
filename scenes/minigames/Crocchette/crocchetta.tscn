@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6fluwretcna"]
+
+[ext_resource type="Texture2D" uid="uid://cy4bo5gimwo8f" path="res://images/crocchetta/crocchetta.png" id="1_8h70q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svih3"]
+radius = 13.0
+height = 50.0
+
+[node name="crocchetta" type="RigidBody2D"]
+
+[node name="Crocchetta" type="Sprite2D" parent="."]
+texture = ExtResource("1_8h70q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.11701
+shape = SubResource("CapsuleShape2D_svih3")

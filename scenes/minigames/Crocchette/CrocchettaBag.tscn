@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd73lk6kk316f"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocchetaBag.gd" id="1_qovpg"]
+[ext_resource type="Texture2D" uid="uid://mtm3puhevp40" path="res://images/crocchetta/busta.png" id="2_ynbse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vla75"]
+size = Vector2(355, 450)
+
+[node name="CrocchettaBag" type="Area2D"]
+script = ExtResource("1_qovpg")
+
+[node name="Busta" type="Sprite2D" parent="."]
+texture = ExtResource("2_ynbse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -15)
+shape = SubResource("RectangleShape2D_vla75")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
