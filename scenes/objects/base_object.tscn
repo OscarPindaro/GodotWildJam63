@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://385a8pduxtks"]
+
+[ext_resource type="Script" path="res://scenes/objects/base_object.gd" id="1_qkmin"]
+
+[node name="BaseObject" type="Node2D" groups=["interactable"]]
+script = ExtResource("1_qkmin")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_body_exited"]
