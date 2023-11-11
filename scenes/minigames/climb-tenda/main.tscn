@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bju5hg6o17h2o"]
+[gd_scene load_steps=15 format=3 uid="uid://bju5hg6o17h2o"]
 
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/main.gd" id="1_43stf"]
 [ext_resource type="PackedScene" uid="uid://bbcr45t2040pe" path="res://scenes/minigames/climb-tenda/letter.tscn" id="2_1w60h"]
@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ba1300jyk04b3" path="res://images/climb-tenda/stop.png" id="3_52htk"]
 [ext_resource type="Texture2D" uid="uid://cudi57psjhphu" path="res://images/climb-tenda/pawDx.png" id="4_hnmyw"]
 [ext_resource type="Texture2D" uid="uid://610qcugwv2mp" path="res://images/climb-tenda/sxPaw.png" id="5_wckrv"]
+[ext_resource type="AudioStream" uid="uid://c5nwra77xb7np" path="res://audio/Cat_Sounds/New folder/Angry_Cat.wav" id="7_pfq4n"]
 [ext_resource type="Texture2D" uid="uid://duliynpwtvswi" path="res://images/climb-tenda/line.png" id="8_rmjo3"]
 [ext_resource type="Texture2D" uid="uid://b0dpcpkni8ltm" path="res://images/climb-tenda/tenda.png" id="9_47do6"]
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/background.gd" id="10_pic6i"]
+[ext_resource type="Texture2D" uid="uid://bnhjydw2dolk4" path="res://icon.svg" id="11_jregm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3oho3"]
 animations = [{
@@ -69,11 +71,15 @@ sprite_frames = SubResource("SpriteFrames_3oho3")
 position = Vector2(-0.799992, -42.4)
 shape = SubResource("RectangleShape2D_m0mmy")
 
+[node name="AngryCat" type="AudioStreamPlayer" parent="cat"]
+stream = ExtResource("7_pfq4n")
+
 [node name="line" type="Area2D" parent="."]
 z_index = 10
+position = Vector2(0, -2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="line"]
-position = Vector2(544, 408)
+position = Vector2(544, 411)
 scale = Vector2(15, 1)
 sprite_frames = SubResource("SpriteFrames_1cg8k")
 
@@ -85,16 +91,26 @@ speed = 40
 
 [node name="main_timer" type="Timer" parent="."]
 wait_time = 5.0
-autostart = true
 
 [node name="letter_timer" type="Timer" parent="."]
-autostart = true
+process_callback = 0
+wait_time = 0.5
 
 [node name="position1" type="Area2D" parent="."]
-position = Vector2(400, -40)
+position = Vector2(368, -49)
 
 [node name="position2" type="Area2D" parent="."]
-position = Vector2(624, -40)
+position = Vector2(645, -47)
+
+[node name="pawSx" type="Sprite2D" parent="."]
+position = Vector2(379, 408)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_jregm")
+
+[node name="pawDx" type="Sprite2D" parent="."]
+position = Vector2(579, 411)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_jregm")
 
 [connection signal="area_entered" from="cat" to="cat" method="_on_area_entered"]
 [connection signal="area_exited" from="cat" to="cat" method="_on_area_exited"]

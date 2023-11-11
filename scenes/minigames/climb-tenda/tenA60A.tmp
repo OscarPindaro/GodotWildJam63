@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://i7l7hys0rdbs"]
+
+[ext_resource type="PackedScene" uid="uid://bj1l1awk2wwv" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
+[ext_resource type="PackedScene" uid="uid://bju5hg6o17h2o" path="res://scenes/minigames/climb-tenda/main.tscn" id="2_xmj5x"]
+
+[sub_resource type="GDScript" id="GDScript_dr244"]
+script/source = "extends ProgressBar
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="BaseMinigame" instance=ExtResource("1_gxanw")]
+
+[node name="Main" parent="." index="0" instance=ExtResource("2_xmj5x")]
+
+[node name="TitleScreen" parent="." index="4"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="EndSprite" parent="." index="5"]
+z_index = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." index="6"]
+z_index = 10
+y_sort_enabled = true
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 10.0
+offset_bottom = 31.0
+script = SubResource("GDScript_dr244")
+
+[connection signal="finished" from="AnnouncerPlayer" to="Main" method="_on_announcer_player_finished"]
+[connection signal="timeout" from="MinigameTimer" to="Main" method="_on_minigame_timer_timeout"]
