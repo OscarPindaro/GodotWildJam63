@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbcr45t2040pe"]
+
+[ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/letter.gd" id="1_ix7qg"]
+[ext_resource type="Texture2D" uid="uid://jmkaga70spl1" path="res://images/climb-tenda/E.png" id="2_4ea0g"]
+[ext_resource type="Texture2D" uid="uid://boy6gf8cr3q14" path="res://images/climb-tenda/I.png" id="3_fv4gd"]
+[ext_resource type="Texture2D" uid="uid://rjbnutlu3pvi" path="res://images/climb-tenda/K.png" id="4_xm4ot"]
+[ext_resource type="Texture2D" uid="uid://cxq87mrleeg15" path="res://images/climb-tenda/N.png" id="5_su2f1"]
+[ext_resource type="Texture2D" uid="uid://cryj5lalt7faj" path="res://images/climb-tenda/S.png" id="6_hsdi7"]
+[ext_resource type="Texture2D" uid="uid://c84gtvumu2t8h" path="res://images/climb-tenda/T.png" id="7_od57x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4xnw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ip2oi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ea0g")
+}],
+"loop": true,
+"name": &"E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fv4gd")
+}],
+"loop": true,
+"name": &"I",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xm4ot")
+}],
+"loop": true,
+"name": &"K",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_su2f1")
+}],
+"loop": true,
+"name": &"N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hsdi7")
+}],
+"loop": true,
+"name": &"S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_od57x")
+}],
+"loop": true,
+"name": &"T",
+"speed": 5.0
+}]
+
+[node name="letter" type="Area2D"]
+position = Vector2(406, 55)
+scale = Vector2(5, 5)
+script = ExtResource("1_ix7qg")
+speed = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.62939e-06, -22.4)
+shape = SubResource("RectangleShape2D_t4xnw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.399994, -22.2)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_ip2oi")
+animation = &"T"
