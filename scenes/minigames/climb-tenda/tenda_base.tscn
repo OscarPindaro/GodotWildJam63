@@ -3,9 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bj1l1awk2wwv" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
 [ext_resource type="PackedScene" uid="uid://bju5hg6o17h2o" path="res://scenes/minigames/climb-tenda/main.tscn" id="2_xmj5x"]
 
-[node name="BaseMinigame" instance=ExtResource("1_gxanw")]
+[node name="BaseMinigame2" instance=ExtResource("1_gxanw")]
 
 [node name="Main" parent="." index="0" instance=ExtResource("2_xmj5x")]
+
+[node name="MusicStreamPlayer" parent="." index="1"]
+bus = &"Music"
+
+[node name="AnnouncerPlayer" parent="." index="2"]
+bus = &"Sound Effects"
 
 [node name="MinigameTimer" parent="." index="3"]
 wait_time = 30.0

@@ -19,9 +19,6 @@ func _ready():
 	title_sprite = $TitleScreen
 	end_sprite = $EndSprite
 	
-
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if start_bar == true:
