@@ -13,17 +13,26 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bncdm")
+}],
 "loop": true,
 "name": &"move_down",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bncdm")
+}],
 "loop": true,
 "name": &"move_horizontal",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bncdm")
+}],
 "loop": true,
 "name": &"move_up",
 "speed": 5.0
@@ -36,7 +45,7 @@ script = ExtResource("1_3fafs")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x2yq7")
-animation = &"idle"
+animation = &"move_up"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1boub")

@@ -31,25 +31,11 @@ func _ready():
 	#base_zoom = $PlayerCamera.zoom
 
 func _process(_delta):
-	print(interactables)
+	#print(interactables)
 	# Interacting with objects
 	if Input.is_action_just_pressed("player_interact") and not interactables.is_empty():
 		var validInteractables = interactables.filter(func(x): return not x.is_in_group("item"))
 		print(validInteractables)
-		if validInteractables.size() > 0:
-			# TODO: interaction priority
-			var consumesItem = validInteractables[0]._player_interact(self)
-			print("cunsumes item? ", consumesItem)
-			if consumesItem == true:
-				print("queue free? ", held_item)
-				held_item.queue_free()
-				held_item = null
-
-	# Picking up and putting down items
-	if Input.is_action_just_pressed("player_useItem"):
-		#if held_item != null:
-		#	drop_item()
-		var validInteractables = interactables.filter(func(x): return x.is_in_group("item"))
 		if validInteractables.size() > 0:
 			validInteractables[0]._player_interact(self)
 	
@@ -70,6 +56,19 @@ func _physics_process(_delta):
 		direction.x += 1
 	if Input.is_action_pressed("player_move_left"):
 		direction.x += -1
+	
+	#if Input.is_action_pressed("player_move_up"):
+	#	direction.y += -0.3
+	#	direction.x += 0.6
+	#if Input.is_action_pressed("player_move_down"):
+	#	direction.y += 0.3
+	#	direction.x += -0.6
+	#if Input.is_action_pressed("player_move_right"):
+	#	direction.y += 0.3
+	#	direction.x += 0.6
+	#if Input.is_action_pressed("player_move_left"):
+	#	direction.y += -0.3
+	#	direction.x += -0.6
 	
 	if (direction != Vector2.ZERO) and (was_moving == false):
 		was_moving = true
