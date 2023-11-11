@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b46ndmlnrkrct"]
+
+[ext_resource type="Texture2D" uid="uid://d4gyh4obsxrsi" path="res://images/Png/BalckSqaure.png" id="1_3yd4t"]
+[ext_resource type="Script" path="res://Asset/Scripts/Pad.gd" id="2_3q1ra"]
+
+[node name="Pad" type="Sprite2D"]
+texture = ExtResource("1_3yd4t")
+script = ExtResource("2_3q1ra")
