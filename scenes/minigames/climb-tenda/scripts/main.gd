@@ -3,14 +3,6 @@ extends Node
 @onready var cat = $cat
 var start_pos = 0
 var score = 0
-
-func new_game():
-	$main_timer.start()
-	$letter_timer.start()
-	
-func game_over():
-	$main_timer.stop()
-	$letter_timer.stop()
 	
 func _on_letter_timer_timeout():
 	var letter = letter_scene.instantiate()
@@ -26,3 +18,18 @@ func _on_letter_timer_timeout():
 
 func _on_cat_scored():
 	score += 10
+
+
+func _on_announcer_player_finished():
+	$letter_timer.start()
+
+
+
+
+func _on_minigame_timer_timeout():
+	$letter_timer.stop()
+	var children = self.get_children()
+	for c in children:
+		if c.is_in_group('letterGroup'):
+			remove_child(c)
+	

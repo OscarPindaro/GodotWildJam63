@@ -2,6 +2,7 @@ extends Area2D
 signal hit
 signal scored
 
+var points = 0
 var num_frames
 var pressed_key
 var collision_list = []
@@ -21,11 +22,13 @@ func _input(event):
 		move_foreward()
 		if pressed_key in letter_list:
 			print('bella mossa fratello')
+			points += 10
 			hit_letter(pressed_key)
 			cleanup(pressed_key)
 
 		else:
 			print('coglione')
+			points -= 5
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
