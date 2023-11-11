@@ -11,7 +11,8 @@ size = Vector2(355, 450)
 script = ExtResource("1_qovpg")
 crocchetta_scene = ExtResource("2_nuor6")
 force_intensity = 1000
-min_delta_position = 30
+min_delta_position = 20
+is_scene_active = true
 
 [node name="Busta" type="Sprite2D" parent="."]
 texture = ExtResource("2_ynbse")
@@ -25,6 +26,8 @@ position = Vector2(159, -200)
 
 [node name="CrocTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="Crocs" type="Node2D" parent="."]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
