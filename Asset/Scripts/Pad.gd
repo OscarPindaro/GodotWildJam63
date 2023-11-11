@@ -4,6 +4,7 @@ var StartPoint = Vector2(0,0)
 var EndPoint = Vector2(0,0)
 var FatherSize = Vector2(0,0)
 var Area:float =  0.0
+var Vertical
 ###################################################################################
 func _ready():
 	pass
@@ -21,14 +22,9 @@ func _doAll():
 
 func _relativeSize(startPoint, endPoint):
 	var res = {"width":0,"height":0}
-	if startPoint.x > endPoint.x:
-		res["width"] = startPoint.x - endPoint.x
-	else:
-		res["width"] = endPoint.x - startPoint.x
-	if startPoint.y > endPoint.y:
-		res["height"] = startPoint.y - endPoint.y
-	else:
-		res["height"] = endPoint.y - startPoint.y
+	
+	res["width"] = abs(endPoint.x - startPoint.x)
+	res["height"] = abs(endPoint.y - startPoint.y)
 	Area = res["width"] * res["height"]
 	return res
 	
@@ -41,9 +37,19 @@ func _setSize(fatherSize,relativeSize):
 	
 	var Fx = (xC * 100)/xZ
 	var Fy = (yC * 100)/xZ
-	self.scale.x = Fx/100
-	self.scale.y = Fy/100
+	
+	self.scale.x = Fx/30
+	self.scale.y = Fy/30
 	
 func _setPosition(startPoint, endPoint, pad):
 	var temp = Vector2(startPoint.x,startPoint.y)
 	pad.set_position(temp)
+	var AC = abs(endPoint.x - startPoint.x)
+	var BC =  abs(endPoint.y - startPoint.y)	
+	var a = atan(BC/AC)
+	var degrees = a * (180 / PI)
+	pad.rotate(degrees)
+	pass
+
+	
+	

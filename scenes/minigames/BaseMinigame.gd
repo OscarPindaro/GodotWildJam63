@@ -4,6 +4,8 @@ var announcer_audio_player : AudioStreamPlayer
 var music_audio_player : AudioStreamPlayer
 var title_sprite: Sprite2D 
 var end_sprite: Sprite2D 
+var world 
+
 
 # funzione di start che fa partire tutto quanto
 # timer e punteggio
@@ -26,7 +28,8 @@ func _process(delta):
 
 func _on_announcer_player_finished():
 	title_sprite.visible = false
+	
 
 
 func _on_minigame_timer_timeout():
-	end_sprite.visible = true	
+	end_sprite.visible = true

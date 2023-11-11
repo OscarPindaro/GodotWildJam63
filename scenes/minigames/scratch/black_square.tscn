@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7qbng6l4i1pp"]
 
-[ext_resource type="Texture2D" uid="uid://d4gyh4obsxrsi" path="res://images/Png/BalckSqaure.png" id="1_xvm50"]
+[ext_resource type="Texture2D" uid="uid://d4lwnqxneqtxp" path="res://scenes/minigames/scratch/taglio.png" id="1_6r4d1"]
 
 [node name="BlackSquare" type="Sprite2D"]
-texture = ExtResource("1_xvm50")
+texture = ExtResource("1_6r4d1")

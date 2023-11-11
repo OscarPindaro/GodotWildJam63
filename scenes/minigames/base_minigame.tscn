@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf48smj3g2hok"]
+[gd_scene load_steps=5 format=3 uid="uid://bfko0l37v0cu6"]
 
 [ext_resource type="Script" path="res://scenes/minigames/BaseMinigame.gd" id="1_6qkdl"]
-[ext_resource type="AudioStream" uid="uid://c8ii6lmhhmr4v" path="res://audio/vc_menu_narration_enterring.wav" id="2_m00r1"]
-[ext_resource type="Texture2D" uid="uid://chhk0dea4uxp4" path="res://images/ziopera_title.png" id="3_5sg00"]
-[ext_resource type="Texture2D" uid="uid://ijbhmamed3ly" path="res://images/ROSSO.png" id="4_hphbd"]
+[ext_resource type="AudioStream" uid="uid://b50npphbejysa" path="res://audio/vc_menu_narration_enterring.wav" id="2_m00r1"]
+[ext_resource type="Texture2D" uid="uid://dsagufgohrt5u" path="res://images/ziopera_title.png" id="3_5sg00"]
+[ext_resource type="Texture2D" uid="uid://5578k4kircry" path="res://images/ROSSO.png" id="4_hphbd"]
 
 [node name="BaseMinigame" type="Node2D"]
 script = ExtResource("1_6qkdl")
