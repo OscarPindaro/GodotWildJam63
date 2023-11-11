@@ -36,7 +36,6 @@ func _on_announcer_player_finished():
 	
 
 
-
 func _on_minigame_timer_timeout():
 	end_sprite.visible = true
 

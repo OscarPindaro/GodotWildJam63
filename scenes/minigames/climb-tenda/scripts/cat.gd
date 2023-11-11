@@ -29,6 +29,7 @@ func _input(event):
 		else:
 			print('coglione')
 			points -= 5
+			$AngryCat.play()
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

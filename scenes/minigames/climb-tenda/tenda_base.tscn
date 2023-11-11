@@ -8,6 +8,7 @@
 [node name="Main" parent="." index="0" instance=ExtResource("2_xmj5x")]
 
 [node name="MinigameTimer" parent="." index="3"]
+wait_time = 30.0
 autostart = false
 
 [node name="TitleScreen" parent="." index="4"]
@@ -17,15 +18,5 @@ y_sort_enabled = true
 [node name="EndSprite" parent="." index="5"]
 z_index = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="." index="6"]
-z_index = 6
-offset_left = 16.0
-offset_top = 30.0
-offset_right = 46.0
-offset_bottom = 630.0
-fill_mode = 3
-show_percentage = false
-
 [connection signal="finished" from="AnnouncerPlayer" to="Main" method="_on_announcer_player_finished"]
-[connection signal="finished" from="AnnouncerPlayer" to="ProgressBar" method="_on_announcer_player_finished"]
 [connection signal="timeout" from="MinigameTimer" to="Main" method="_on_minigame_timer_timeout"]
