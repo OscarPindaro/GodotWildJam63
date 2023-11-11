@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/main.gd" id="1_43stf"]
 [ext_resource type="PackedScene" uid="uid://bbcr45t2040pe" path="res://scenes/minigames/climb-tenda/letter.tscn" id="2_1w60h"]
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/cat.gd" id="2_3vy6d"]
-[ext_resource type="Texture2D" uid="uid://ba1300jyk04b3" path="res://images/climb-tenda/stop.png" id="3_52htk"]
-[ext_resource type="Texture2D" uid="uid://cudi57psjhphu" path="res://images/climb-tenda/pawDx.png" id="4_hnmyw"]
-[ext_resource type="Texture2D" uid="uid://610qcugwv2mp" path="res://images/climb-tenda/sxPaw.png" id="5_wckrv"]
+[ext_resource type="Texture2D" uid="uid://cj1olgpu4wiew" path="res://images/climb-tenda/IDLE.png" id="4_0j087"]
+[ext_resource type="Texture2D" uid="uid://pu5awce5dan6" path="res://images/climb-tenda/DX.png" id="5_s86cb"]
+[ext_resource type="Texture2D" uid="uid://cl3exdvwjf0s6" path="res://images/climb-tenda/SX.png" id="6_kft0t"]
 [ext_resource type="AudioStream" uid="uid://bqgfq2fmx4ft" path="res://audio/UI_Sounds/Interaction_Happy_sound.wav" id="7_emfxt"]
 [ext_resource type="Texture2D" uid="uid://duliynpwtvswi" path="res://images/climb-tenda/line.png" id="8_rmjo3"]
-[ext_resource type="Texture2D" uid="uid://b0dpcpkni8ltm" path="res://images/climb-tenda/tenda.png" id="9_47do6"]
+[ext_resource type="Texture2D" uid="uid://dun8ad2ug5f55" path="res://images/climb-tenda/CURTAIN.png" id="9_hhxwa"]
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/background.gd" id="10_pic6i"]
 [ext_resource type="Texture2D" uid="uid://bnhjydw2dolk4" path="res://icon.svg" id="11_jregm"]
 
@@ -16,7 +16,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_52htk")
+"texture": ExtResource("4_0j087")
 }],
 "loop": true,
 "name": &"default",
@@ -24,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_hnmyw")
+"texture": ExtResource("5_s86cb")
 }],
 "loop": true,
 "name": &"dxPaw",
@@ -32,7 +32,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_wckrv")
+"texture": ExtResource("6_kft0t")
 }],
 "loop": true,
 "name": &"sxPaw",
@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0mmy"]
-size = Vector2(101.6, 4.8)
+size = Vector2(101.6, 7)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1cg8k"]
 animations = [{
@@ -64,11 +64,14 @@ scale = Vector2(10, 10)
 script = ExtResource("2_3vy6d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cat"]
-position = Vector2(-5.30001, -29.4)
+position = Vector2(0, -33.8)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_3oho3")
+animation = &"sxPaw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cat"]
-position = Vector2(-0.799992, -42.4)
+position = Vector2(0, -48.3)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m0mmy")
 
 [node name="cat_climbing" type="AudioStreamPlayer" parent="cat"]
@@ -88,13 +91,14 @@ z_index = 10
 position = Vector2(0, -2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="line"]
-position = Vector2(544, 411)
+position = Vector2(573, 360)
 scale = Vector2(15, 1)
 sprite_frames = SubResource("SpriteFrames_1cg8k")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(573, -355)
-texture = ExtResource("9_47do6")
+position = Vector2(582, -1785)
+scale = Vector2(1.09462, 1.7496)
+texture = ExtResource("9_hhxwa")
 script = ExtResource("10_pic6i")
 speed = 40
 
@@ -106,18 +110,18 @@ process_callback = 0
 wait_time = 2.0
 
 [node name="position1" type="Area2D" parent="."]
-position = Vector2(368, -49)
+position = Vector2(402, -49)
 
 [node name="position2" type="Area2D" parent="."]
-position = Vector2(645, -47)
+position = Vector2(689, -49)
 
 [node name="pawSx" type="Sprite2D" parent="."]
-position = Vector2(379, 408)
+position = Vector2(402, 347)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_jregm")
 
 [node name="pawDx" type="Sprite2D" parent="."]
-position = Vector2(579, 411)
+position = Vector2(689, 352)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_jregm")
 
