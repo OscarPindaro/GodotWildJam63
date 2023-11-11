@@ -8,7 +8,8 @@
 [node name="Main" parent="." index="0" instance=ExtResource("2_xmj5x")]
 
 [node name="MinigameTimer" parent="." index="3"]
-wait_time = 105.0
+wait_time = 30.0
+autostart = false
 
 [node name="TitleScreen" parent="." index="4"]
 z_index = 1
@@ -16,3 +17,6 @@ y_sort_enabled = true
 
 [node name="EndSprite" parent="." index="5"]
 z_index = 1
+
+[connection signal="finished" from="AnnouncerPlayer" to="Main" method="_on_announcer_player_finished"]
+[connection signal="timeout" from="MinigameTimer" to="Main" method="_on_minigame_timer_timeout"]

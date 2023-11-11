@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd73lk6kk316f"]
+[gd_scene load_steps=5 format=3 uid="uid://uthi7ik2aabt"]
 
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocchetaBag.gd" id="1_qovpg"]
-[ext_resource type="PackedScene" uid="uid://c6fluwretcna" path="res://scenes/minigames/Crocchette/crocchetta.tscn" id="2_nuor6"]
+[ext_resource type="PackedScene" uid="uid://c5fen4omtcxep" path="res://scenes/minigames/Crocchette/crocchetta.tscn" id="2_nuor6"]
 [ext_resource type="Texture2D" uid="uid://mtm3puhevp40" path="res://images/crocchetta/busta.png" id="2_ynbse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vla75"]

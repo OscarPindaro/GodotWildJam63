@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Godot Wild Jam 63"
+run/main_scene="res://scenes/minigames/climb-tenda/main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1180
+window/size/viewport_height=720
 
 [rendering]
 

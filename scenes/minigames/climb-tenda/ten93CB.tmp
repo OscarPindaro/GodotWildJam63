@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://i7l7hys0rdbs"]
+
+[ext_resource type="PackedScene" uid="uid://bj1l1awk2wwv" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
+[ext_resource type="PackedScene" uid="uid://bju5hg6o17h2o" path="res://scenes/minigames/climb-tenda/main.tscn" id="2_xmj5x"]
+[ext_resource type="Script" path="res://scenes/minigames/climb-tenda/BarControl.gd" id="3_6t5lg"]
+
+[sub_resource type="GDScript" id="GDScript_dr244"]
+script/source = "extends ProgressBar
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="BaseMinigame" instance=ExtResource("1_gxanw")]
+
+[node name="Main" parent="." index="0" instance=ExtResource("2_xmj5x")]
+
+[node name="TitleScreen" parent="." index="4"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="EndSprite" parent="." index="5"]
+z_index = 1
+
+[node name="BarControl" type="Control" parent="." index="6"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_6t5lg")
+
+[node name="ProgressBar" type="ProgressBar" parent="BarControl" index="0"]
+z_index = 10
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 19.0
+offset_top = 29.0
+offset_right = 59.0
+offset_bottom = 629.0
+fill_mode = 3
+script = SubResource("GDScript_dr244")
+
+[connection signal="finished" from="AnnouncerPlayer" to="Main" method="_on_announcer_player_finished"]
+[connection signal="timeout" from="MinigameTimer" to="Main" method="_on_minigame_timer_timeout"]
+[connection signal="timeout" from="MinigameTimer" to="BarControl" method="_on_minigame_timer_timeout"]
