@@ -1,22 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://8iy38txc2fh"]
+[gd_scene load_steps=5 format=3 uid="uid://i7l7hys0rdbs"]
 
 [ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
 [ext_resource type="PackedScene" uid="uid://bju5hg6o17h2o" path="res://scenes/minigames/climb-tenda/main.tscn" id="2_xmj5x"]
+[ext_resource type="AudioStream" uid="uid://bwh4mppb8osn0" path="res://audio/Vox_Announcements/ClimbTheCurtains1_eng.wav" id="3_cgqfb"]
+[ext_resource type="Texture2D" uid="uid://botbm8islldg3" path="res://images/climb-tenda/start-game.png" id="3_cmgys"]
 
-[node name="BaseMinigame" instance=ExtResource("1_gxanw")]
+[node name="BaseMinigame2" instance=ExtResource("1_gxanw")]
 
 [node name="Main" parent="." index="0" instance=ExtResource("2_xmj5x")]
 
+[node name="AnnouncerPlayer" parent="." index="2"]
+stream = ExtResource("3_cgqfb")
+
 [node name="MinigameTimer" parent="." index="3"]
-wait_time = 30.0
+wait_time = 10.0
 autostart = false
 
 [node name="TitleScreen" parent="." index="4"]
 z_index = 1
 y_sort_enabled = true
+position = Vector2(591, 352)
+texture = ExtResource("3_cmgys")
 
 [node name="EndSprite" parent="." index="5"]
-z_index = 1
+position = Vector2(591, 352)
 
+[node name="Label" parent="." index="7"]
+z_index = 6
+
+[connection signal="score" from="Main" to="." method="_on_receive_score"]
 [connection signal="finished" from="AnnouncerPlayer" to="Main" method="_on_announcer_player_finished"]
 [connection signal="timeout" from="MinigameTimer" to="Main" method="_on_minigame_timer_timeout"]
