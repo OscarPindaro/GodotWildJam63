@@ -1,4 +1,4 @@
-extends "res://scenes/minigames/BaseMinigame.gd"
+extends Node2D
 #load
 var Pad  = preload("res://scenes/minigames/scratch/taglio.tscn")
 #var Line = preload("res://scenes/minigames/Line.tscn")
@@ -18,6 +18,10 @@ var father = Vector2(0,0)
 var totalPoint = 0
 var timer = 0
 var block = true
+
+#signals
+signal score(points)
+
 ##################################
 func _ready():
 	#get couch casting size dimesion
@@ -59,8 +63,10 @@ func _spawnSquare():
 	sprite._grabData1(startPoint, endPoint, father)
 	CC.add_child(sprite)
 	sprite._doAll()
-	totalPoint = totalPoint + sprite.Area / 100
+	var deltaPoint =  sprite.Area / 100
+	totalPoint = totalPoint + deltaPoint
 	totalPoint = int(round(totalPoint))
+	emit_signal("score",deltaPoint)
 	PT._grabData(totalPoint)
 
 func _drawLine():
