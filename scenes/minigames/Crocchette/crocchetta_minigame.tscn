@@ -1,9 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://07re4p1i4uoc"]
+[gd_scene load_steps=9 format=3 uid="uid://07re4p1i4uoc"]
 
 [ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_x8fe6"]
-[ext_resource type="PackedScene" uid="uid://bd73lk6kk316f" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
+[ext_resource type="AudioStream" uid="uid://bwenm7ihai4xf" path="res://audio/Vox_Announcements/ShakeTheTreats1_eng.wav" id="2_2x8jg"]
+[ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocKiller.gd" id="3_o6m1x"]
+[ext_resource type="PackedScene" uid="uid://uthi7ik2aabt" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
+[ext_resource type="Texture2D" uid="uid://cquhkt0kcyw3" path="res://images/crocchetta/cucina.png" id="5_guihh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c12f"]
+size = Vector2(114, 789.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bobyc"]
+size = Vector2(292.75, 850)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3vl5"]
+size = Vector2(1589.5, 73)
 
 [node name="CrocchettaMinigame" instance=ExtResource("1_x8fe6")]
 
-[node name="CrocchettaBag" parent="." index="5" instance=ExtResource("3_y76pb")]
-position = Vector2(576, 319)
+[node name="Cucina" type="Sprite2D" parent="." index="0"]
+position = Vector2(596, 359)
+scale = Vector2(1.11204, 1)
+texture = ExtResource("5_guihh")
+
+[node name="AnnouncerPlayer" parent="." index="2"]
+stream = ExtResource("2_2x8jg")
+
+[node name="CrocchettaBag" parent="." index="7" instance=ExtResource("3_y76pb")]
+position = Vector2(566, 332)
+
+[node name="CrocKiller" type="Node" parent="." index="8"]
+script = ExtResource("3_o6m1x")
+croc_bag_path = NodePath("../CrocchettaBag")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-60, 333)
+shape = SubResource("RectangleShape2D_3c12f")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0"]
+position = Vector2(1352, 362)
+shape = SubResource("RectangleShape2D_bobyc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+position = Vector2(686, -42)
+shape = SubResource("RectangleShape2D_u3vl5")
+
+[connection signal="finished" from="AnnouncerPlayer" to="CrocchettaBag" method="_on_announcer_player_finished"]
+[connection signal="timeout" from="MinigameTimer" to="CrocchettaBag" method="_on_minigame_timer_timeout"]
