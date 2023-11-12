@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://1cu0y5r5edjv"]
+
+[ext_resource type="PackedScene" uid="uid://ckbitv4gjqbt" path="res://scenes/objects/base_minigame_starter.tscn" id="1_5yu2m"]
+[ext_resource type="Texture2D" path="res://images/WINDOW.png" id="2_ynogj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_520d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ynogj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xhjh"]
+size = Vector2(79.1939, 19.5925)
+
+[node name="Finestra" instance=ExtResource("1_5yu2m")]
+
+[node name="AnimatedSprite2D" parent="Area2D" index="0"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_520d7")
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2(-14, 70)
+rotation = 0.473902
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1xhjh")
