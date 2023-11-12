@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccpm106bfj60a"]
+
+[ext_resource type="PackedScene" uid="uid://ckbitv4gjqbt" path="res://scenes/objects/base_minigame_starter.tscn" id="1_e8co6"]
+[ext_resource type="Texture2D" uid="uid://cokxjlyg4im76" path="res://images/table/TABLE.png" id="2_d3cma"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_muqmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d3cma")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Table" instance=ExtResource("1_e8co6")]
+
+[node name="AnimatedSprite2D" parent="Area2D" index="0"]
+sprite_frames = SubResource("SpriteFrames_muqmh")
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="2"]
+polygon = PackedVector2Array(-80, 15, 16, 64, 80, 30, 100, 49, 18, 94, -94, 31)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-80, 15, -81, -28, -19, -62, 81, -12, 79, 29, 17, 64)
