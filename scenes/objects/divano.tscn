@@ -32,6 +32,6 @@ shape = SubResource("RectangleShape2D_f88ps")
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(-46, 9, 15, 40, 45, 26, -18, -3)
+polygon = PackedVector2Array(-46, 9, 15, 40, 45, 26, -18, -3, -10, -30, -47, -10)
 
 [node name="Polygon2D" type="Polygon2D" parent="." index="2"]

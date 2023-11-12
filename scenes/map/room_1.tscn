@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3r1qgihc1y7n"]
+[gd_scene load_steps=11 format=3 uid="uid://3r1qgihc1y7n"]
 
 [ext_resource type="PackedScene" uid="uid://h8lc1f6njmv" path="res://scenes/map/TileMapRoom.tscn" id="1_47w1q"]
 [ext_resource type="PackedScene" uid="uid://sljqfmqu7jyn" path="res://scenes/player/player.tscn" id="2_e3uya"]
@@ -8,12 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://1cu0y5r5edjv" path="res://scenes/objects/Finestra.tscn" id="6_wbhb7"]
 [ext_resource type="PackedScene" uid="uid://5ix5kril2ye8" path="res://scenes/objects/divano.tscn" id="7_sufyc"]
 [ext_resource type="PackedScene" uid="uid://brr8mhuf50deb" path="res://scenes/objects/kitchen.tscn" id="8_cmxxh"]
+[ext_resource type="PackedScene" uid="uid://ccpm106bfj60a" path="res://scenes/objects/table.tscn" id="9_ihsu5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_syxhk"]
 font_size = 64
 font_color = Color(0.262745, 0.901961, 0.133333, 1)
 
 [node name="Room1" type="Node2D"]
+y_sort_enabled = true
 position = Vector2(-51, 48)
 
 [node name="TileMapRoom" parent="." instance=ExtResource("1_47w1q")]
@@ -41,6 +43,7 @@ minigamePath = ExtResource("4_21qi7")
 position = Vector2(-16.3722, 74.6252)
 
 [node name="Divano" parent="." instance=ExtResource("7_sufyc")]
+y_sort_enabled = true
 position = Vector2(237, 250)
 scale = Vector2(-1.25, 1.25)
 minigamePath = ExtResource("4_uiqw0")
@@ -56,5 +59,8 @@ polygon = PackedVector2Array(670, 640, 1126, 415, 1125, 449, 672, 674, 56, 366, 
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(64, 336, 518, 108, 730, 221, 1122, 416, 1186, 376, 528, 65, 358, 108, 24, 291)
+
+[node name="Table" parent="." instance=ExtResource("9_ihsu5")]
+position = Vector2(589, 322)
 
 [editable path="Finestra"]
