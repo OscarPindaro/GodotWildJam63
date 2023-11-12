@@ -8,10 +8,16 @@ var starters = []
 
 var score = 0
 @onready var score_label = $ScoreLabel
+@onready var music_player = $InGameMusic
+
+@export var game_scene : PackedScene
+@export var max_minigames = 0
+var played_minigames = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Subscribe to all _hero_entered and _hero_exited signals
+	music_player.play()
 	starters = get_tree().get_nodes_in_group("minigameStarter")
 	for i in range(0, starters.size()):
 		starters[i]._start_minigame.connect(Callable(_startMinigame))
@@ -27,6 +33,7 @@ func _process(delta):
 
 func _startMinigame(minigame):
 	#var instance = load(minigamePath).instantiate() 
+	music_player.stop()
 	_minigame_started.emit()
 	var instance = minigame.instantiate() 
 	#print(minigamePath)
@@ -41,4 +48,9 @@ func _endMinigame(minigame):
 	_minigame_ended.emit()
 	score_label.text = str(score)
 	global.score = score
+	played_minigames += 1
+	if played_minigames >= max_minigames:
+		get_tree().change_scene_to_packed(game_scene)
+	music_player.play()
 	pass
+
