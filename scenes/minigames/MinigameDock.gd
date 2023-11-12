@@ -34,7 +34,7 @@ func _startMinigame(minigame):
 	pass
 	
 func _endMinigame(minigame):
-	
+	score += minigame.current_score
 	minigame.queue_free()
 	_minigame_ended.emit()
 	pass
