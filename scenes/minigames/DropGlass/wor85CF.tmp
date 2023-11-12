@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://builj7pcu3rcw"]
+
+[ext_resource type="Texture2D" uid="uid://b1iq4habcecsn" path="res://scenes/minigames/DropGlass/Asset/Senza titolo.png" id="1_gtycp"]
+[ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/World.gd" id="1_x6uib"]
+[ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Table.gd" id="2_3d6jg"]
+[ext_resource type="Texture2D" uid="uid://bnhjydw2dolk4" path="res://icon.svg" id="3_gpohj"]
+[ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Player.gd" id="4_pfi8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kch04"]
+size = Vector2(1238, 569)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cicah"]
+radius = 103.121
+
+[node name="World" type="Node2D"]
+position = Vector2(-3, 1)
+script = ExtResource("1_x6uib")
+
+[node name="TablePadre" type="Area2D" parent="."]
+position = Vector2(-3, -6)
+script = ExtResource("2_3d6jg")
+
+[node name="Table" type="Sprite2D" parent="TablePadre"]
+position = Vector2(704, 337)
+texture = ExtResource("1_gtycp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TablePadre"]
+position = Vector2(688, 328.5)
+shape = SubResource("RectangleShape2D_kch04")
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(-3, -2)
+script = ExtResource("4_pfi8q")
+
+[node name="Player" type="Sprite2D" parent="Player"]
+position = Vector2(263, 200)
+texture = ExtResource("3_gpohj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(262, 202)
+shape = SubResource("CircleShape2D_cicah")

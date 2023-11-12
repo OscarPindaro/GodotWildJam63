@@ -1,3 +1,5 @@
+class_name BaseMinigame
+
 extends Node2D
 signal score
 # signals
