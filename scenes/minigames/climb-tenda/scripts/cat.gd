@@ -1,5 +1,6 @@
 extends Area2D
 signal hit
+signal cat_score
 
 var points = 0
 var num_frames
@@ -34,17 +35,17 @@ func _input(event):
 		pressed_key = event.as_text_keycode()
 		move_foreward()
 		if pressed_key in letter_list:
-			print('bella mossa fratello')
 			play_sound(audioFiles_climb, audio_node_climb)
 			good_job.play()
-			points += 10
+			points = 60
 			hit_letter(pressed_key)
 			cleanup(pressed_key)
 
 		else:
-			print('coglione')
 			play_sound(audioFiles_angry, audio_node_angry)
-			points -= 5
+			points = 0
+		emit_signal('cat_score', points)
+		print(points)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://m1d5cyof348t"]
+[gd_scene load_steps=9 format=3 uid="uid://m1d5cyof348t"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/main_menu.gd" id="1_46i64"]
 [ext_resource type="Texture2D" uid="uid://dtree3t4f0lej" path="res://images/menu_background.jpg" id="2_ha0sa"]
 [ext_resource type="FontFile" uid="uid://dbqepk61gflra" path="res://images/DustDemonBold.ttf" id="2_vdvl5"]
+[ext_resource type="PackedScene" uid="uid://3r1qgihc1y7n" path="res://scenes/map/room_1.tscn" id="2_yojc0"]
 [ext_resource type="FontFile" uid="uid://dd23ge8ulahqr" path="res://images/HandwritingCR-2.ttf" id="3_20qo5"]
 [ext_resource type="Script" path="res://scenes/menu/scripts/CommandsOverlay.gd" id="5_t2sha"]
 [ext_resource type="Script" path="res://scenes/menu/scripts/CreditsOverlay.gd" id="6_ea1co"]
@@ -17,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_46i64")
+game_scene = ExtResource("2_yojc0")
 
 [node name="Title" type="Label" parent="."]
 z_index = 6
@@ -54,6 +56,7 @@ texture = ExtResource("2_ha0sa")
 
 [node name="Commands" type="Button" parent="."]
 z_index = 6
+layout_mode = 0
 offset_left = 340.0
 offset_top = 481.0
 offset_right = 740.0
@@ -64,6 +67,7 @@ text = "COMMANDS"
 
 [node name="Credits" type="Button" parent="."]
 z_index = 6
+layout_mode = 0
 offset_left = 340.0
 offset_top = 597.0
 offset_right = 740.0
@@ -144,6 +148,7 @@ color = Color(0, 0, 0, 0.72549)
 script = ExtResource("6_ea1co")
 
 [node name="Close" type="Button" parent="CreditsOverlay"]
+layout_mode = 0
 offset_left = 952.0
 offset_top = 8.0
 offset_right = 960.0

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://07re4p1i4uoc"]
 
-[ext_resource type="PackedScene" uid="uid://bj1l1awk2wwv" path="res://scenes/minigames/base_minigame.tscn" id="1_x8fe6"]
+[ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_x8fe6"]
 [ext_resource type="AudioStream" uid="uid://bwenm7ihai4xf" path="res://audio/Vox_Announcements/ShakeTheTreats1_eng.wav" id="2_2x8jg"]
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocKiller.gd" id="3_o6m1x"]
-[ext_resource type="PackedScene" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
+[ext_resource type="PackedScene" uid="uid://uthi7ik2aabt" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
 [ext_resource type="Texture2D" uid="uid://cquhkt0kcyw3" path="res://images/crocchetta/cucina.png" id="5_guihh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c12f"]

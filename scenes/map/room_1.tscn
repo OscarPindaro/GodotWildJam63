@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3r1qgihc1y7n"]
+[gd_scene load_steps=10 format=3 uid="uid://3r1qgihc1y7n"]
 
 [ext_resource type="PackedScene" uid="uid://h8lc1f6njmv" path="res://scenes/map/TileMapRoom.tscn" id="1_47w1q"]
 [ext_resource type="PackedScene" uid="uid://sljqfmqu7jyn" path="res://scenes/player/player.tscn" id="2_e3uya"]
@@ -6,8 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://i7l7hys0rdbs" path="res://scenes/minigames/climb-tenda/tenda_base.tscn" id="4_21qi7"]
 [ext_resource type="PackedScene" uid="uid://dl3236tyk774r" path="res://scenes/minigames/minigame_dock.tscn" id="4_gijfu"]
 [ext_resource type="PackedScene" uid="uid://07re4p1i4uoc" path="res://scenes/minigames/Crocchette/crocchetta_minigame.tscn" id="4_uiqw0"]
-[ext_resource type="PackedScene" path="res://scenes/objects/Finestra.tscn" id="6_wbhb7"]
-[ext_resource type="PackedScene" path="res://scenes/objects/divano.tscn" id="7_sufyc"]
+[ext_resource type="PackedScene" uid="uid://1cu0y5r5edjv" path="res://scenes/objects/Finestra.tscn" id="6_wbhb7"]
+[ext_resource type="PackedScene" uid="uid://dhkvdp45wfthd" path="res://scenes/objects/divano.tscn" id="7_sufyc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_syxhk"]
+font_size = 64
+font_color = Color(0.262745, 0.901961, 0.133333, 1)
 
 [node name="Room1" type="Node2D"]
 
@@ -24,6 +28,13 @@ position = Vector2(606, 465)
 minigamePath = ExtResource("4_21qi7")
 
 [node name="MinigameDock" parent="." instance=ExtResource("4_gijfu")]
+
+[node name="ScoreLabel" type="Label" parent="MinigameDock"]
+offset_left = 48.0
+offset_top = 604.0
+offset_right = 88.0
+offset_bottom = 692.0
+label_settings = SubResource("LabelSettings_syxhk")
 
 [node name="Finestra" parent="." instance=ExtResource("6_wbhb7")]
 position = Vector2(850, 215)

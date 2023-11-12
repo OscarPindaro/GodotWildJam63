@@ -2,6 +2,7 @@ extends Node
 @export var letter_scene: PackedScene
 @onready var cat = $cat
 signal score
+
 var start_pos = 0
 var points
 	
@@ -20,10 +21,11 @@ func _on_announcer_player_finished():
 	$letter_timer.start()
 
 func _on_minigame_timer_timeout():
-	emit_signal('score', cat.points)
 	$letter_timer.stop()
 	var children = self.get_children()
 	for c in children:
 		if c.is_in_group('letterGroup'):
 			remove_child(c)
-	
+
+func _on_cat_cat_score(value):
+	emit_signal("score", value)
