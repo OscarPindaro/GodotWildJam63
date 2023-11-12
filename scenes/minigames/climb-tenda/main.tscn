@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bju5hg6o17h2o"]
+[gd_scene load_steps=13 format=3 uid="uid://bju5hg6o17h2o"]
 
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/main.gd" id="1_43stf"]
 [ext_resource type="PackedScene" uid="uid://bbcr45t2040pe" path="res://scenes/minigames/climb-tenda/letter.tscn" id="2_1w60h"]
@@ -7,10 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://pu5awce5dan6" path="res://images/climb-tenda/DX.png" id="5_s86cb"]
 [ext_resource type="Texture2D" uid="uid://cl3exdvwjf0s6" path="res://images/climb-tenda/SX.png" id="6_kft0t"]
 [ext_resource type="AudioStream" uid="uid://bqgfq2fmx4ft" path="res://audio/UI_Sounds/Interaction_Happy_sound.wav" id="7_emfxt"]
-[ext_resource type="Texture2D" uid="uid://duliynpwtvswi" path="res://images/climb-tenda/line.png" id="8_rmjo3"]
-[ext_resource type="Texture2D" uid="uid://dun8ad2ug5f55" path="res://images/climb-tenda/CURTAIN.png" id="9_hhxwa"]
+[ext_resource type="Texture2D" uid="uid://v2awwyxeheyd" path="res://images/climb-tenda/CURTAIN BIIIIIIIIG.png" id="8_ucn7b"]
+[ext_resource type="Texture2D" uid="uid://clfwj46pisidj" path="res://images/climb-tenda/paw.png" id="10_515tv"]
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/background.gd" id="10_pic6i"]
-[ext_resource type="Texture2D" uid="uid://bnhjydw2dolk4" path="res://icon.svg" id="11_jregm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3oho3"]
 animations = [{
@@ -42,17 +41,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0mmy"]
 size = Vector2(101.6, 7)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1cg8k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_rmjo3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Main" type="Node"]
 script = ExtResource("1_43stf")
 letter_scene = ExtResource("2_1w60h")
@@ -76,29 +64,17 @@ shape = SubResource("RectangleShape2D_m0mmy")
 
 [node name="cat_climbing" type="AudioStreamPlayer" parent="cat"]
 volume_db = 15.0
-bus = &"Sound Effects"
 
 [node name="cat_angry" type="AudioStreamPlayer" parent="cat"]
-bus = &"Sound Effects"
 
 [node name="good_job" type="AudioStreamPlayer" parent="cat"]
 stream = ExtResource("7_emfxt")
 volume_db = 10.0
-bus = &"Sound Effects"
-
-[node name="line" type="Area2D" parent="."]
-z_index = 10
-position = Vector2(0, -2)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="line"]
-position = Vector2(573, 360)
-scale = Vector2(15, 1)
-sprite_frames = SubResource("SpriteFrames_1cg8k")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(582, -1785)
+position = Vector2(590, -9342)
 scale = Vector2(1.09462, 1.7496)
-texture = ExtResource("9_hhxwa")
+texture = ExtResource("8_ucn7b")
 script = ExtResource("10_pic6i")
 speed = 40
 
@@ -116,18 +92,19 @@ position = Vector2(402, -49)
 position = Vector2(689, -49)
 
 [node name="pawSx" type="Sprite2D" parent="."]
-position = Vector2(402, 347)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_jregm")
+position = Vector2(405, 350)
+rotation = 0.261799
+scale = Vector2(0.02, 0.021)
+texture = ExtResource("10_515tv")
 
 [node name="pawDx" type="Sprite2D" parent="."]
-position = Vector2(689, 352)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_jregm")
+position = Vector2(687, 352)
+rotation = -0.261799
+scale = Vector2(0.02, 0.021)
+texture = ExtResource("10_515tv")
 
 [connection signal="area_entered" from="cat" to="cat" method="_on_area_entered"]
 [connection signal="area_exited" from="cat" to="cat" method="_on_area_exited"]
 [connection signal="hit" from="cat" to="Background" method="_on_cat_hit"]
-[connection signal="scored" from="cat" to="." method="_on_cat_scored"]
 [connection signal="timeout" from="main_timer" to="." method="_on_main_timer_timeout"]
 [connection signal="timeout" from="letter_timer" to="." method="_on_letter_timer_timeout"]

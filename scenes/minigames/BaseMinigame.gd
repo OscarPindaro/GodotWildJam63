@@ -6,6 +6,8 @@ var title_sprite: Sprite2D
 var end_sprite: Sprite2D 
 var cum = 0
 var start_bar = false
+var current_score = 0
+@onready var score_label = $Label
 # funzione di start che fa partire tutto quanto
 # timer e punteggio
 # scritta iniziale
@@ -13,6 +15,7 @@ var start_bar = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	score_label.text = str(current_score)
 	$MinigameTimer.start()
 	announcer_audio_player = $AnnouncerPlayer
 	music_audio_player = $MusicStreamPlayer
@@ -32,7 +35,12 @@ func _on_announcer_player_finished():
 	$MinigameTimer.start()
 	
 
-
 func _on_minigame_timer_timeout():
 	end_sprite.visible = true
 
+
+func _on_receive_score(score):
+	current_score += score
+	score_label.text = str(current_score)
+	
+	

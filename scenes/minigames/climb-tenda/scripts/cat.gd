@@ -1,6 +1,5 @@
 extends Area2D
 signal hit
-signal scored
 
 var points = 0
 var num_frames

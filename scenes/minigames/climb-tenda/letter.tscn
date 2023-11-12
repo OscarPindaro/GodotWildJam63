@@ -73,6 +73,6 @@ shape = SubResource("RectangleShape2D_t4xnw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.399994, -22.2)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_ip2oi")
 animation = &"T"
