@@ -1,19 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj1l1awk2wwv"]
+[gd_scene load_steps=5 format=3 uid="uid://d3nohv06rygpl"]
 
 [ext_resource type="Script" path="res://scenes/minigames/BaseMinigame.gd" id="1_6qkdl"]
-[ext_resource type="AudioStream" uid="uid://d18tqqw03srr6" path="res://audio/Vox_Announcements/UnrollTheToiletPaper1_ita.wav" id="2_oijt7"]
-[ext_resource type="Texture2D" uid="uid://d3wl8bb0lj4v1" path="res://images/ziopera_title.png" id="3_5sg00"]
-[ext_resource type="Texture2D" uid="uid://q7nw8rh7nsrw" path="res://images/ROSSO.png" id="4_hphbd"]
+[ext_resource type="AudioStream" uid="uid://b2aein2sql648" path="res://audio/Vox_Announcements/BreakTheStuff1_ita.wav" id="2_o437m"]
+[ext_resource type="Texture2D" uid="uid://b7kykrgcpx6ms" path="res://images/ziopera_title.png" id="3_5sg00"]
+[ext_resource type="Texture2D" uid="uid://dsrfu6lahv7sh" path="res://images/ROSSO.png" id="4_hphbd"]
 
-[node name="BaseMinigame" type="Node2D"]
+[node name="BaseMinigame" type="Node2D" groups=["minigame"]]
 script = ExtResource("1_6qkdl")
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 
 [node name="AnnouncerPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_oijt7")
-autoplay = true
+stream = ExtResource("2_o437m")
 
 [node name="MinigameTimer" type="Timer" parent="."]
 wait_time = 5.0

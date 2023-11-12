@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://yamqrmne1408"]
+[gd_scene load_steps=6 format=3 uid="uid://yamqrmne1408"]
 
 [ext_resource type="PackedScene" uid="uid://ckbitv4gjqbt" path="res://scenes/objects/base_minigame_starter.tscn" id="1_sts7k"]
+[ext_resource type="PackedScene" uid="uid://07re4p1i4uoc" path="res://scenes/minigames/Crocchette/crocchetta_minigame.tscn" id="2_cm3fo"]
 [ext_resource type="Texture2D" uid="uid://bnhjydw2dolk4" path="res://icon.svg" id="2_fiviq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3pn50"]
@@ -17,6 +18,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdhmf"]
 
 [node name="TestMobilia" instance=ExtResource("1_sts7k")]
+minigamePath = ExtResource("2_cm3fo")
 
 [node name="AnimatedSprite2D" parent="Area2D" index="0"]
 scale = Vector2(0.157171, 0.156576)

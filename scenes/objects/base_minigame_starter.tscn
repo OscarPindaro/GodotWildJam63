@@ -2,10 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://385a8pduxtks" path="res://scenes/objects/base_object.tscn" id="1_jf2xl"]
 [ext_resource type="Script" path="res://BaseMinigameStarter.gd" id="2_ds0q7"]
-[ext_resource type="Script" path="res://scenes/objects/minigame.gd" id="3_52a64"]
+[ext_resource type="PackedScene" uid="uid://i7l7hys0rdbs" path="res://scenes/minigames/climb-tenda/tenda_base.tscn" id="3_0vg2k"]
 
 [node name="BaseMinigameStarter" groups=["minigameStarter"] instance=ExtResource("1_jf2xl")]
 script = ExtResource("2_ds0q7")
-
-[node name="minigame" type="Node" parent="." index="1"]
-script = ExtResource("3_52a64")
+minigamePath = ExtResource("3_0vg2k")
