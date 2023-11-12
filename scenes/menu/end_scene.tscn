@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menu/scripts/end_scene.gd" id="1_8x6qc"]
 [ext_resource type="FontFile" uid="uid://dbqepk61gflra" path="res://images/DustDemonBold.ttf" id="1_keyho"]
 [ext_resource type="FontFile" uid="uid://dd23ge8ulahqr" path="res://images/HandwritingCR-2.ttf" id="2_m1pnp"]
-[ext_resource type="Texture2D" uid="uid://dtree3t4f0lej" path="res://images/menu_background.jpg" id="3_34nb1"]
+[ext_resource type="Texture2D" uid="uid://b6nvsig0m8ulw" path="res://images/paws.jpg" id="4_ckjm5"]
 
 [node name="end_scene" type="Control"]
 layout_mode = 3
@@ -47,7 +47,7 @@ text = "PLAY AGAIN"
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(543, 365)
 scale = Vector2(1.05, 1.05)
-texture = ExtResource("3_34nb1")
+texture = ExtResource("4_ckjm5")
 
 [node name="description" type="Label" parent="."]
 z_index = 6
