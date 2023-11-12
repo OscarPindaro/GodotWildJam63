@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/main.gd" id="1_43stf"]
 [ext_resource type="PackedScene" uid="uid://bbcr45t2040pe" path="res://scenes/minigames/climb-tenda/letter.tscn" id="2_1w60h"]
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/cat.gd" id="2_3vy6d"]
-[ext_resource type="Texture2D" uid="uid://cj1olgpu4wiew" path="res://images/climb-tenda/IDLE.png" id="4_0j087"]
-[ext_resource type="Texture2D" uid="uid://pu5awce5dan6" path="res://images/climb-tenda/DX.png" id="5_s86cb"]
-[ext_resource type="Texture2D" uid="uid://cl3exdvwjf0s6" path="res://images/climb-tenda/SX.png" id="6_kft0t"]
-[ext_resource type="AudioStream" uid="uid://bqgfq2fmx4ft" path="res://audio/UI_Sounds/Interaction_Happy_sound.wav" id="7_emfxt"]
-[ext_resource type="Texture2D" uid="uid://v2awwyxeheyd" path="res://images/climb-tenda/CURTAIN BIIIIIIIIG.png" id="8_ucn7b"]
-[ext_resource type="Texture2D" uid="uid://clfwj46pisidj" path="res://images/climb-tenda/paw.png" id="10_515tv"]
+[ext_resource type="Texture2D" uid="uid://dutl60ykchvpa" path="res://images/climb-tenda/IDLE.png" id="4_0j087"]
+[ext_resource type="Texture2D" uid="uid://q0uip12je7np" path="res://images/climb-tenda/DX.png" id="5_s86cb"]
+[ext_resource type="Texture2D" uid="uid://cq7m4ch40tm4j" path="res://images/climb-tenda/SX.png" id="6_kft0t"]
+[ext_resource type="AudioStream" uid="uid://d2dsr2fiq42qc" path="res://audio/UI_Sounds/Interaction_Happy_sound.wav" id="7_emfxt"]
+[ext_resource type="Texture2D" uid="uid://cij5vd1dipc7q" path="res://images/climb-tenda/CURTAIN BIIIIIIIIG.png" id="8_ucn7b"]
+[ext_resource type="Texture2D" uid="uid://dpiarjcegcjtx" path="res://images/climb-tenda/paw.png" id="10_515tv"]
 [ext_resource type="Script" path="res://scenes/minigames/climb-tenda/scripts/background.gd" id="10_pic6i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3oho3"]
@@ -59,7 +59,6 @@ animation = &"sxPaw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cat"]
 position = Vector2(0, -48.3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m0mmy")
 
 [node name="cat_climbing" type="AudioStreamPlayer" parent="cat"]

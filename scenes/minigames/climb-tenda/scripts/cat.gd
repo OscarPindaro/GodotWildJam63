@@ -51,14 +51,16 @@ func _process(delta):
 	pass
 
 func _on_area_entered(area):
-	collision_list.append(area)
-	letter_list.append(area.letter)
+	if area.is_in_group("letterGroup"):
+		collision_list.append(area)
+		letter_list.append(area.letter)
 	pass # Replace with function body.
 
 
 func _on_area_exited(area):
-	collision_list.erase(area.get_name())
-	letter_list.erase(area.letter)
+	if area.is_in_group("letterGroup"):
+		collision_list.erase(area.get_name())
+		letter_list.erase(area.letter)
 	pass # Replace with function body.
 	
 	
