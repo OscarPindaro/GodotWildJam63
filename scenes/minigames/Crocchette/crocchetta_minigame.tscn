@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://07re4p1i4uoc"]
+[gd_scene load_steps=13 format=3 uid="uid://07re4p1i4uoc"]
 
 [ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_x8fe6"]
 [ext_resource type="AudioStream" uid="uid://1viwpab72rbo" path="res://audio/Vox_Announcements/ShakeTheTreats1_eng.wav" id="2_2x8jg"]
+[ext_resource type="Texture2D" uid="uid://dma7o8tw0exr8" path="res://images/crocchetta/CROCCHETTS GAME BG.png" id="2_cqgco"]
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocKiller.gd" id="3_o6m1x"]
 [ext_resource type="PackedScene" uid="uid://uthi7ik2aabt" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
-[ext_resource type="Texture2D" uid="uid://dhb6yqmdlqimi" path="res://images/crocchetta/cucina.png" id="5_guihh"]
+[ext_resource type="Texture2D" uid="uid://bdx2yllb4kjvt" path="res://images/crocchetta/shake_the_treats.png" id="4_0g0b2"]
+[ext_resource type="Texture2D" uid="uid://cgasjegfattci" path="res://images/crocchetta/instructions.png" id="7_0it08"]
+[ext_resource type="Script" path="res://scenes/minigames/Crocchette/instruction.gd" id="8_myojl"]
+[ext_resource type="PackedScene" uid="uid://jk4cojd8fn63" path="res://scenes/paw.tscn" id="9_uu4sn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c12f"]
 size = Vector2(114, 789.5)
@@ -18,12 +22,15 @@ size = Vector2(1589.5, 73)
 [node name="CrocchettaMinigame" instance=ExtResource("1_x8fe6")]
 
 [node name="Cucina" type="Sprite2D" parent="." index="0"]
-position = Vector2(596, 359)
+position = Vector2(609, 360)
 scale = Vector2(1.11204, 1)
-texture = ExtResource("5_guihh")
+texture = ExtResource("2_cqgco")
 
 [node name="AnnouncerPlayer" parent="." index="2"]
 stream = ExtResource("2_2x8jg")
+
+[node name="TitleScreen" parent="." index="5"]
+texture = ExtResource("4_0g0b2")
 
 [node name="CrocchettaBag" parent="." index="7" instance=ExtResource("3_y76pb")]
 position = Vector2(566, 332)
@@ -53,5 +60,20 @@ shape = SubResource("RectangleShape2D_bobyc")
 position = Vector2(686, -42)
 shape = SubResource("RectangleShape2D_u3vl5")
 
+[node name="Label" parent="." index="13"]
+offset_left = 1020.0
+offset_top = 23.0
+offset_right = 1060.0
+offset_bottom = 111.0
+
+[node name="Instructions" type="Sprite2D" parent="." index="14"]
+position = Vector2(550, 389)
+texture = ExtResource("7_0it08")
+script = ExtResource("8_myojl")
+
+[node name="Paw" parent="." index="15" instance=ExtResource("9_uu4sn")]
+
 [connection signal="finished" from="AnnouncerPlayer" to="CrocchettaBag" method="_on_announcer_player_finished"]
+[connection signal="finished" from="AnnouncerPlayer" to="Instructions" method="_on_announcer_player_finished"]
 [connection signal="timeout" from="MinigameTimer" to="CrocchettaBag" method="_on_minigame_timer_timeout"]
+[connection signal="score" from="CrocchettaBag" to="." method="_on_receive_score"]

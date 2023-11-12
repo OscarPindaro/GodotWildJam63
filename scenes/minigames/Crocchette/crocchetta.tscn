@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5fen4omtcxep"]
+[gd_scene load_steps=5 format=3 uid="uid://c5fen4omtcxep"]
 
-[ext_resource type="Texture2D" path="res://images/crocchetta/crocchetta.png" id="1_8h70q"]
+[ext_resource type="Texture2D" uid="uid://cy4bo5gimwo8f" path="res://images/crocchetta/crocchetta.png" id="1_8h70q"]
+[ext_resource type="Script" path="res://scenes/minigames/Crocchette/crocchetta.gd" id="1_qn1q4"]
+[ext_resource type="AudioStream" uid="uid://e2h4kvh6h4sm" path="res://audio/Shake_treats/Falling_Treats5.wav" id="3_7ej83"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svih3"]
 radius = 13.0
@@ -8,6 +10,7 @@ height = 50.0
 
 [node name="crocchetta" type="RigidBody2D"]
 inertia = 1.0
+script = ExtResource("1_qn1q4")
 
 [node name="Crocchetta" type="Sprite2D" parent="."]
 texture = ExtResource("1_8h70q")
@@ -15,3 +18,8 @@ texture = ExtResource("1_8h70q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.11701
 shape = SubResource("CapsuleShape2D_svih3")
+
+[node name="TickPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7ej83")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
