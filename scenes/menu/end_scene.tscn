@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf1rd7mguhp08"]
+
+[ext_resource type="Script" path="res://scenes/menu/scripts/end_scene.gd" id="1_8x6qc"]
+[ext_resource type="FontFile" uid="uid://dbqepk61gflra" path="res://images/DustDemonBold.ttf" id="1_keyho"]
+[ext_resource type="FontFile" uid="uid://dd23ge8ulahqr" path="res://images/HandwritingCR-2.ttf" id="2_m1pnp"]
+[ext_resource type="Texture2D" uid="uid://b6nvsig0m8ulw" path="res://images/paws.jpg" id="4_ckjm5"]
+
+[node name="end_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8x6qc")
+
+[node name="Title" type="Label" parent="."]
+z_index = 6
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -394.0
+offset_top = 121.0
+offset_right = 394.0
+offset_bottom = 245.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_keyho")
+theme_override_font_sizes/font_size = 80
+text = "GOOD JOB
+"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 340.0
+offset_top = 518.0
+offset_right = 740.0
+offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("2_m1pnp")
+theme_override_font_sizes/font_size = 50
+text = "PLAY AGAIN"
+
+[node name="end_line" type="AudioStreamPlayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(543, 365)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("4_ckjm5")
+
+[node name="description" type="Label" parent="."]
+z_index = 6
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -394.0
+offset_top = 225.0
+offset_right = 394.0
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_keyho")
+theme_override_font_sizes/font_size = 40
+text = "You made a real mess!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

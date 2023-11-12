@@ -7,6 +7,7 @@ signal _minigame_ended()
 var starters = []
 
 var score = 0
+@onready var score_label = $ScoreLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,8 @@ func _ready():
 	starters = get_tree().get_nodes_in_group("minigameStarter")
 	for i in range(0, starters.size()):
 		starters[i]._start_minigame.connect(Callable(_startMinigame))
-	pass # Replace with function body.
+	score_label.text = '0'
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,4 +39,6 @@ func _endMinigame(minigame):
 	score += minigame.current_score
 	minigame.queue_free()
 	_minigame_ended.emit()
+	score_label.text = str(score)
+	global.score = score
 	pass
