@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhkvdp45wfthd"]
+[gd_scene load_steps=5 format=3 uid="uid://5ix5kril2ye8"]
 
 [ext_resource type="PackedScene" uid="uid://ckbitv4gjqbt" path="res://scenes/objects/base_minigame_starter.tscn" id="1_3pdkn"]
-[ext_resource type="Texture2D" uid="uid://5idj37ji8ri8" path="res://images/divano/SOFA.png" id="2_ucmcb"]
+[ext_resource type="Texture2D" path="res://images/divano/SOFA.png" id="2_ucmcb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1imi7"]
 animations = [{
@@ -28,3 +28,10 @@ position = Vector2(-19.9905, 37.0167)
 rotation = 0.463154
 scale = Vector2(1.19855, 1.27395)
 shape = SubResource("RectangleShape2D_f88ps")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-46, 9, 15, 40, 45, 26, -18, -3)
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="2"]
