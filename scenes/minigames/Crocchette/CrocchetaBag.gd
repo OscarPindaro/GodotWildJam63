@@ -1,5 +1,5 @@
 extends Area2D
-
+signal score
 var mouse_inside : bool = false
 var mouse_active: bool = false
 
@@ -9,6 +9,8 @@ var mouse_active: bool = false
 
 @onready var shake_player : AudioStreamPlayer = $AudioStreamPlayer
 var audio_files = []
+
+var n_spawned_crocs = 0
 
 
 var rng = RandomNumberGenerator.new()
@@ -53,9 +55,12 @@ func _process(delta):
 				can_shoot = false
 				$CrocTimer.start()
 				var n_crocs = rng.randi_range(2,MAX_CROCS)
+				n_spawned_crocs += n_crocs
+				emit_signal('score', n_crocs)
 				for i in range(n_crocs):
 					var croc: RigidBody2D = crocchetta_scene.instantiate()
 					$Crocs.add_child(croc)
+					croc.z_index = self.z_index + 1
 					var random_noise_x = 0
 					var random_noise_y = 0
 					croc.global_position = $SpawnPoint.global_position + Vector2(rng.randfn(10, 30),rng.randfn(10, 30))
@@ -81,6 +86,8 @@ func _on_croc_timer_timeout():
 
 func _on_minigame_timer_timeout():
 	is_scene_active = false
+	$AudioStreamPlayer.stop()
+	
 
 
 func _on_announcer_player_finished():

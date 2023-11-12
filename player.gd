@@ -162,7 +162,9 @@ func connect_runtime_interactable(interactable):
 	
 func _getControl():
 	inMain = true
+	visible = true
 	
 func _loseControl():
+	visible = false
 	inMain = false
 

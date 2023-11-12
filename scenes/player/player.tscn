@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://sljqfmqu7jyn"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3fafs"]
-[ext_resource type="Texture2D" uid="uid://pdfsywqteu2o" path="res://images/CAT ANIMATION SHEET.png" id="3_dou0k"]
-[ext_resource type="Texture2D" uid="uid://d06akftnq2kxa" path="res://images/climb-tenda/E.png" id="3_wolqi"]
+[ext_resource type="Texture2D" uid="uid://f0tawqywgsf8" path="res://images/CAT ANIMATION SHEET.png" id="3_dou0k"]
+[ext_resource type="Texture2D" uid="uid://lod867yu71wc" path="res://images/climb-tenda/E.png" id="3_wolqi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwmol"]
 atlas = ExtResource("3_dou0k")
@@ -83,7 +83,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1boub"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6m4t"]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 3
@@ -95,9 +95,9 @@ sprite_frames = SubResource("SpriteFrames_x2yq7")
 animation = &"idle_down"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(2, 4)
 scale = Vector2(1.4, 1.4)
-shape = SubResource("RectangleShape2D_1boub")
+shape = SubResource("CircleShape2D_i6m4t")
 
 [node name="InteractButton" type="Sprite2D" parent="."]
 visible = false

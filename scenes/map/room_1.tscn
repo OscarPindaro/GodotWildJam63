@@ -1,19 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://3r1qgihc1y7n"]
+[gd_scene load_steps=11 format=3 uid="uid://3r1qgihc1y7n"]
 
 [ext_resource type="PackedScene" uid="uid://h8lc1f6njmv" path="res://scenes/map/TileMapRoom.tscn" id="1_47w1q"]
 [ext_resource type="PackedScene" uid="uid://sljqfmqu7jyn" path="res://scenes/player/player.tscn" id="2_e3uya"]
-[ext_resource type="PackedScene" uid="uid://yamqrmne1408" path="res://scenes/objects/test_mobilia.tscn" id="3_ytdw6"]
 [ext_resource type="PackedScene" uid="uid://i7l7hys0rdbs" path="res://scenes/minigames/climb-tenda/tenda_base.tscn" id="4_21qi7"]
 [ext_resource type="PackedScene" uid="uid://dl3236tyk774r" path="res://scenes/minigames/minigame_dock.tscn" id="4_gijfu"]
 [ext_resource type="PackedScene" uid="uid://07re4p1i4uoc" path="res://scenes/minigames/Crocchette/crocchetta_minigame.tscn" id="4_uiqw0"]
 [ext_resource type="PackedScene" uid="uid://1cu0y5r5edjv" path="res://scenes/objects/Finestra.tscn" id="6_wbhb7"]
-[ext_resource type="PackedScene" uid="uid://dhkvdp45wfthd" path="res://scenes/objects/divano.tscn" id="7_sufyc"]
+[ext_resource type="PackedScene" uid="uid://5ix5kril2ye8" path="res://scenes/objects/divano.tscn" id="7_sufyc"]
+[ext_resource type="PackedScene" uid="uid://brr8mhuf50deb" path="res://scenes/objects/kitchen.tscn" id="8_cmxxh"]
+[ext_resource type="PackedScene" uid="uid://ccpm106bfj60a" path="res://scenes/objects/table.tscn" id="9_ihsu5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_syxhk"]
 font_size = 64
 font_color = Color(0.262745, 0.901961, 0.133333, 1)
 
 [node name="Room1" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(-51, 48)
 
 [node name="TileMapRoom" parent="." instance=ExtResource("1_47w1q")]
 layer_0/tile_data = PackedInt32Array(2490378, 0, 3, 2424841, 0, 3, 2359305, 0, 3, 2293768, 0, 3, 2228232, 0, 3, 2162695, 0, 3, 2097159, 0, 3, 2031622, 0, 3, 1966086, 0, 3, 1900549, 0, 3, 1835013, 0, 3, 1769476, 0, 3, 1703940, 0, 3, 1638403, 0, 3, 1572867, 0, 3, 1507330, 0, 3, 1441794, 0, 3, 1376257, 0, 3, 1310721, 0, 3, 2424842, 0, 3, 2359307, 0, 3, 2293771, 0, 3, 2228236, 0, 3, 2162700, 0, 3, 2097165, 0, 3, 2031629, 0, 3, 1966094, 0, 3, 1900558, 0, 3, 1835023, 0, 3, 1769487, 0, 3, 1703952, 0, 3, 1638416, 0, 3, 1572880, 0, 3, 1507343, 0, 3, 1441807, 0, 3, 1376270, 0, 3, 1310734, 0, 3, 1245197, 0, 3, 1179661, 0, 3, 1114124, 0, 3, 1048588, 0, 3, 983051, 0, 3, 917515, 0, 3, 851978, 0, 3, 786442, 0, 3, 720905, 0, 3, 655369, 0, 3, 589832, 0, 3, 524296, 0, 3, 458759, 0, 3, 524295, 0, 3, 589830, 0, 3, 655366, 0, 3, 720901, 0, 3, 786437, 0, 3, 851972, 0, 3, 917508, 0, 3, 983043, 0, 3, 1048579, 0, 3, 1114114, 0, 3, 1179650, 0, 3, 1245185, 0, 3, 1703943, 0, 3, 1638407, 0, 3, 1572872, 0, 3, 1507336, 0, 3, 1441801, 0, 3, 1376265, 0, 3, 1310730, 0, 3, 1245194, 0, 3, 1179659, 0, 3, 1114123, 0, 3, 1048587, 0, 3, 983050, 0, 3, 917514, 0, 3, 851977, 0, 3, 786441, 0, 3, 720904, 0, 3, 655368, 0, 3, 589831, 0, 3, 655367, 0, 3, 720902, 0, 3, 786438, 0, 3, 851973, 0, 3, 917509, 0, 3, 983044, 0, 3, 1048580, 0, 3, 1114115, 0, 3, 1179651, 0, 3, 1245186, 0, 3, 1310722, 0, 3, 1376258, 0, 3, 1310723, 0, 3, 1245187, 0, 3, 1179652, 0, 3, 1114116, 0, 3, 1048581, 0, 3, 983045, 0, 3, 917510, 0, 3, 851974, 0, 3, 786439, 0, 3, 720903, 0, 3, 786440, 0, 3, 851975, 0, 3, 917511, 0, 3, 983046, 0, 3, 1048582, 0, 3, 1114117, 0, 3, 1179653, 0, 3, 1245188, 0, 3, 1310724, 0, 3, 1376259, 0, 3, 1441795, 0, 3, 1507331, 0, 3, 1441796, 0, 3, 1376260, 0, 3, 1310725, 0, 3, 1245189, 0, 3, 1179654, 0, 3, 1114118, 0, 3, 1048583, 0, 3, 983047, 0, 3, 917512, 0, 3, 851976, 0, 3, 917513, 0, 3, 983048, 0, 3, 1048584, 0, 3, 1114119, 0, 3, 1179655, 0, 3, 1245190, 0, 3, 1310726, 0, 3, 1376261, 0, 3, 1441797, 0, 3, 1507332, 0, 3, 1572868, 0, 3, 1638404, 0, 3, 1572869, 0, 3, 1507333, 0, 3, 1441798, 0, 3, 1376262, 0, 3, 1310727, 0, 3, 1245191, 0, 3, 1179656, 0, 3, 1114120, 0, 3, 1048585, 0, 3, 983049, 0, 3, 1048586, 0, 3, 1114121, 0, 3, 1179657, 0, 3, 1245192, 0, 3, 1310728, 0, 3, 1376263, 0, 3, 1441799, 0, 3, 1507334, 0, 3, 1572870, 0, 3, 1638405, 0, 3, 1703941, 0, 3, 1769477, 0, 3, 1703942, 0, 3, 1638406, 0, 3, 1572871, 0, 3, 1507335, 0, 3, 1441800, 0, 3, 1376264, 0, 3, 1310729, 0, 3, 1245193, 0, 3, 1179658, 0, 3, 1114122, 0, 3, 1769478, 0, 3, 1835014, 0, 3, 1900550, 0, 3, 1835015, 0, 3, 1769479, 0, 3, 1703944, 0, 3, 1638408, 0, 3, 1572873, 0, 3, 1507337, 0, 3, 1441802, 0, 3, 1376266, 0, 3, 1310731, 0, 3, 1245195, 0, 3, 1179660, 0, 3, 1245196, 0, 3, 1310732, 0, 3, 1376267, 0, 3, 1441803, 0, 3, 1507338, 0, 3, 1572874, 0, 3, 1638409, 0, 3, 1703945, 0, 3, 1769480, 0, 3, 1835016, 0, 3, 1900551, 0, 3, 1966087, 0, 3, 2031623, 0, 3, 1966088, 0, 3, 1900552, 0, 3, 1835017, 0, 3, 1769481, 0, 3, 1703946, 0, 3, 1638410, 0, 3, 1572875, 0, 3, 1507339, 0, 3, 1441804, 0, 3, 1376268, 0, 3, 1310733, 0, 3, 1376269, 0, 3, 1441805, 0, 3, 1507340, 0, 3, 1572876, 0, 3, 1638411, 0, 3, 1703947, 0, 3, 1769482, 0, 3, 1835018, 0, 3, 1900553, 0, 3, 1966089, 0, 3, 2031624, 0, 3, 2097160, 0, 3, 2162696, 0, 3, 2097161, 0, 3, 2031625, 0, 3, 1966090, 0, 3, 1900554, 0, 3, 1835019, 0, 3, 1769483, 0, 3, 1703948, 0, 3, 1638412, 0, 3, 1572877, 0, 3, 1507341, 0, 3, 1441806, 0, 3, 1507342, 0, 3, 1572878, 0, 3, 1638413, 0, 3, 1703949, 0, 3, 1769484, 0, 3, 1835020, 0, 3, 1900555, 0, 3, 1966091, 0, 3, 2031626, 0, 3, 2097162, 0, 3, 2162697, 0, 3, 2228233, 0, 3, 2293769, 0, 3, 2228234, 0, 3, 2162698, 0, 3, 2097163, 0, 3, 2031627, 0, 3, 1966092, 0, 3, 1900556, 0, 3, 1835021, 0, 3, 1769485, 0, 3, 1703950, 0, 3, 1638414, 0, 3, 1572879, 0, 3, 1638415, 0, 3, 1703951, 0, 3, 1769486, 0, 3, 1835022, 0, 3, 1900557, 0, 3, 1966093, 0, 3, 2031628, 0, 3, 2097164, 0, 3, 2162699, 0, 3, 2228235, 0, 3, 2293770, 0, 3, 2359306, 0, 3)
@@ -22,10 +25,6 @@ layer_2/tile_data = PackedInt32Array(3735578, 0, 1, 3670027, 0, 1)
 
 [node name="player" parent="." instance=ExtResource("2_e3uya")]
 position = Vector2(563, 434)
-
-[node name="TestMobilia" parent="." instance=ExtResource("3_ytdw6")]
-position = Vector2(606, 465)
-minigamePath = ExtResource("4_21qi7")
 
 [node name="MinigameDock" parent="." instance=ExtResource("4_gijfu")]
 
@@ -44,7 +43,24 @@ minigamePath = ExtResource("4_21qi7")
 position = Vector2(-16.3722, 74.6252)
 
 [node name="Divano" parent="." instance=ExtResource("7_sufyc")]
-position = Vector2(688, 199)
+y_sort_enabled = true
+position = Vector2(237, 250)
+scale = Vector2(-1.25, 1.25)
 minigamePath = ExtResource("4_uiqw0")
+
+[node name="Kitchen" parent="." instance=ExtResource("8_cmxxh")]
+position = Vector2(515, 81)
+minigamePath = ExtResource("4_uiqw0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(670, 640, 1126, 415, 1125, 449, 672, 674, 56, 366, 56, 331)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(64, 336, 518, 108, 730, 221, 1122, 416, 1186, 376, 528, 65, 358, 108, 24, 291)
+
+[node name="Table" parent="." instance=ExtResource("9_ihsu5")]
+position = Vector2(589, 322)
 
 [editable path="Finestra"]

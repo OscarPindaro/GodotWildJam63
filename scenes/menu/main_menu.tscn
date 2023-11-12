@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://m1d5cyof348t"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/main_menu.gd" id="1_46i64"]
-[ext_resource type="Texture2D" uid="uid://dtree3t4f0lej" path="res://images/menu_background.jpg" id="2_ha0sa"]
-[ext_resource type="FontFile" uid="uid://dbqepk61gflra" path="res://images/DustDemonBold.ttf" id="2_vdvl5"]
+[ext_resource type="Texture2D" uid="uid://c0xnkpfdryu70" path="res://images/menu_background.jpg" id="2_ha0sa"]
+[ext_resource type="FontFile" uid="uid://b6ogyletib8no" path="res://images/DustDemonBold.ttf" id="2_vdvl5"]
 [ext_resource type="PackedScene" uid="uid://3r1qgihc1y7n" path="res://scenes/map/room_1.tscn" id="2_yojc0"]
-[ext_resource type="FontFile" uid="uid://dd23ge8ulahqr" path="res://images/HandwritingCR-2.ttf" id="3_20qo5"]
+[ext_resource type="FontFile" uid="uid://dmqk4aqndww5p" path="res://images/HandwritingCR-2.ttf" id="3_20qo5"]
 [ext_resource type="Script" path="res://scenes/menu/scripts/CommandsOverlay.gd" id="5_t2sha"]
 [ext_resource type="Script" path="res://scenes/menu/scripts/CreditsOverlay.gd" id="6_ea1co"]
-[ext_resource type="Texture2D" uid="uid://dq2m8qata2dw5" path="res://images/X.png" id="6_einb6"]
+[ext_resource type="Texture2D" uid="uid://dtq7vyu1nwevu" path="res://images/X.png" id="6_einb6"]
 
 [node name="main_menu" type="Control"]
 y_sort_enabled = true
