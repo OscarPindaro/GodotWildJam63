@@ -25,6 +25,7 @@ func _process(delta):
 
 func _startMinigame(minigame):
 	#var instance = load(minigamePath).instantiate() 
+	_minigame_started.emit()
 	var instance = minigame.instantiate() 
 	#print(minigamePath)
 	#var instance = new()
@@ -33,6 +34,7 @@ func _startMinigame(minigame):
 	pass
 	
 func _endMinigame(minigame):
-	
+	score += minigame.current_score
 	minigame.queue_free()
+	_minigame_ended.emit()
 	pass

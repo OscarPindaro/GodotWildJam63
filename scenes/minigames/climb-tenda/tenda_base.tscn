@@ -13,20 +13,26 @@
 [node name="AnnouncerPlayer" parent="." index="2"]
 stream = ExtResource("3_cgqfb")
 
-[node name="MinigameTimer" parent="." index="3"]
+[node name="MinigameTimer" parent="." index="4"]
 wait_time = 10.0
 autostart = false
 
-[node name="TitleScreen" parent="." index="4"]
+[node name="TitleScreen" parent="." index="5"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(591, 352)
 texture = ExtResource("3_cmgys")
 
-[node name="EndSprite" parent="." index="5"]
+[node name="EndSprite" parent="." index="6"]
 position = Vector2(591, 352)
 
-[node name="Label" parent="." index="7"]
+[node name="Description" type="Sprite2D" parent="." index="8"]
+z_index = 6
+position = Vector2(614, 437)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_5sh5x")
+
+[node name="Label" parent="." index="9"]
 z_index = 6
 
 [node name="Description" type="Sprite2D" parent="." index="8"]

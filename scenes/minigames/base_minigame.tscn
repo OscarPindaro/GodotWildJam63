@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj1l1awk2wwv"]
+[gd_scene load_steps=7 format=3 uid="uid://cf48smj3g2hok"]
 
 [ext_resource type="Script" path="res://scenes/minigames/BaseMinigame.gd" id="1_6qkdl"]
-[ext_resource type="AudioStream" uid="uid://d18tqqw03srr6" path="res://audio/Vox_Announcements/UnrollTheToiletPaper1_ita.wav" id="2_oijt7"]
-[ext_resource type="Texture2D" uid="uid://d3wl8bb0lj4v1" path="res://images/ziopera_title.png" id="3_5sg00"]
-[ext_resource type="Texture2D" uid="uid://bcgfhfbwp1ipb" path="res://images/end-screen.png" id="4_agh1q"]
+[ext_resource type="AudioStream" uid="uid://ba8goo5e2vrtr" path="res://audio/Vox_Announcements/UnrollTheToiletPaper1_ita.wav" id="2_oijt7"]
+[ext_resource type="Texture2D" uid="uid://bjj42651afqh1" path="res://images/ziopera_title.png" id="3_5sg00"]
+[ext_resource type="AudioStream" uid="uid://cqm7m4b33s366" path="res://audio/Vox_Announcements/BreakTheStuff1_ita.wav" id="3_34vkc"]
+[ext_resource type="Texture2D" uid="uid://bwophjfn46d4j" path="res://images/end-screen.png" id="4_agh1q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8u00s"]
 font_size = 64
@@ -18,6 +19,9 @@ autoplay = true
 [node name="AnnouncerPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_oijt7")
 autoplay = true
+
+[node name="EndAnnouncer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_34vkc")
 
 [node name="MinigameTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -51,4 +55,5 @@ offset_bottom = 48.0
 label_settings = SubResource("LabelSettings_8u00s")
 
 [connection signal="finished" from="AnnouncerPlayer" to="." method="_on_announcer_player_finished"]
+[connection signal="finished" from="EndAnnouncer" to="." method="_on_end_announcer_finished"]
 [connection signal="timeout" from="MinigameTimer" to="." method="_on_minigame_timer_timeout"]
