@@ -33,6 +33,7 @@ func _ready():
 	was_moving = false
 	# Get camera zoom
 	#base_zoom = $PlayerCamera.zoom
+	$AnimatedSprite.animation = "idle_down"
 
 func _process(_delta):
 	#print(interactables)
@@ -57,27 +58,27 @@ func _physics_process(_delta):
 	
 	# Movement
 	var direction = Vector2.ZERO
-	if Input.is_action_pressed("player_move_up"):
-		direction.y += -1
-	if Input.is_action_pressed("player_move_down"):
-		direction.y += 1
-	if Input.is_action_pressed("player_move_right"):
-		direction.x += 1
-	if Input.is_action_pressed("player_move_left"):
-		direction.x += -1
-	
 	#if Input.is_action_pressed("player_move_up"):
-	#	direction.y += -0.3
-	#	direction.x += 0.6
+	#	direction.y += -1
 	#if Input.is_action_pressed("player_move_down"):
-	#	direction.y += 0.3
-	#	direction.x += -0.6
+	#	direction.y += 1
 	#if Input.is_action_pressed("player_move_right"):
-	#	direction.y += 0.3
-	#	direction.x += 0.6
+	#	direction.x += 1
 	#if Input.is_action_pressed("player_move_left"):
-	#	direction.y += -0.3
-	#	direction.x += -0.6
+	#	direction.x += -1
+	
+	if Input.is_action_pressed("player_move_up"):
+		direction.y += -0.3
+		direction.x += 0.6
+	if Input.is_action_pressed("player_move_down"):
+		direction.y += 0.3
+		direction.x += -0.6
+	if Input.is_action_pressed("player_move_right"):
+		direction.y += 0.3
+		direction.x += 0.6
+	if Input.is_action_pressed("player_move_left"):
+		direction.y += -0.3
+		direction.x += -0.6
 	
 	if (direction != Vector2.ZERO) and (was_moving == false):
 		was_moving = true
@@ -91,28 +92,15 @@ func _physics_process(_delta):
 	var target_velocity = direction.normalized() * movement_speed
 	velocity = target_velocity
 	move_and_slide()
-
-	# Animations
-	#var sprite = $AnimatedSprite
-	#if target_velocity == Vector2.ZERO:
-	#	sprite.animation = "idle"
-	#elif target_velocity.x > 0:
-	#	sprite.animation = "move_horizontal"
-	#	sprite.flip_h = false;
-	#elif target_velocity.x < 0:
-	#	sprite.animation = "move_horizontal"
-	#	sprite.flip_h = true;
-	#elif target_velocity.y > 0:
-	#	sprite.animation = "move_down"
-	#	sprite.flip_h = false;
-	#else:
-	#	sprite.animation = "move_up"
-	#	sprite.flip_h = false;
-	#sprite.play()
 	
 	var sprite = $AnimatedSprite
+	print (old_velocity)
+	print (was_moving)
 	if target_velocity == Vector2.ZERO:
-		sprite.animation = "idle"
+		if old_velocity.y > 0:
+			sprite.animation = "idle_down"
+		elif old_velocity.y < 0:
+			sprite.animation = "idle_up"
 	elif target_velocity.y > 0:
 		sprite.animation = "move_down"
 		sprite.flip_h = false;
