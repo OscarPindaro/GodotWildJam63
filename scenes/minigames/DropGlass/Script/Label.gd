@@ -11,7 +11,7 @@ func _process(delta):
 	pass
 
 func _grabData(data):
-	testo = str(data)
+	testo = str(int(data))
 	var my_label = self
 	my_label.text = testo
 	

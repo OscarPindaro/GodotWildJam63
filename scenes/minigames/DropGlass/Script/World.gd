@@ -20,6 +20,10 @@ var spawned = 0
 var block = true
 var GlassesCreate = []
 var totalPoint = 0
+
+#signals
+signal score(points)
+
 ##################################
 func _ready():
 	var nodePath:NodePath = "./TablePadre"
@@ -69,5 +73,7 @@ func _getRandomValidLocation(DCS):
 	return res
 
 func PushOut():
-	totalPoint = totalPoint + (10 * Player._returnTimer())
+	var deltaPoint = (10 * Player._returnTimer())
+	totalPoint = totalPoint + deltaPoint
+	emit_signal("score", deltaPoint)
 	LPoint._grabData(totalPoint)

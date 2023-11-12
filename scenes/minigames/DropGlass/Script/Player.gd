@@ -27,30 +27,36 @@ var bMDown = true
 var bDone = false
 var block = false
 
+
+
+
 var totalPoint = 0
 var timer = 50
 var ASACHI = 0
 func _ready():
 	bDone = true
+	$Player.play()
 
 func _process(delta):
 	if bDone == true:
 		timer -= delta
 		deltaM = delta
-		
-			
 	
 func _input(event):
 	if block == false:
 		print("x: ", global_position.x, "  y: ", global_position.y)
 		if bMUp == true and event is InputEventKey and event.as_text_keycode() == "W":	
 			self.global_position.y -= speed * deltaM
+			$Player.rotation = -90
 		if bMLeft == true and event is InputEventKey and event.as_text_keycode() == "A":
 			self.global_position.x -= speed * deltaM
+			$Player.rotation = -180
 		if bMDown == true and event is InputEventKey and event.as_text_keycode() == "S":
 			self.global_position.y += speed * deltaM
+			$Player.rotation = 90
 		if bMLeft == true and event is InputEventKey and event.as_text_keycode() == "D":
 			self.global_position.x += speed * deltaM
+			$Player.rotation = 0
 		if bG1 == true or bG2 == true or bG3 == true or bG4 == true or bG5 == true :
 			if event is InputEventKey and event.as_text_keycode() == "P":
 				if bG1 == true:

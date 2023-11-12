@@ -1,15 +1,37 @@
-[gd_scene load_steps=18 format=3 uid="uid://builj7pcu3rcw"]
+[gd_scene load_steps=21 format=3 uid="uid://builj7pcu3rcw"]
 
-[ext_resource type="Texture2D" uid="uid://b1iq4habcecsn" path="res://scenes/minigames/DropGlass/Asset/Senza titolo.png" id="1_gtycp"]
 [ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/World.gd" id="1_x6uib"]
 [ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Table.gd" id="2_3d6jg"]
-[ext_resource type="Texture2D" uid="uid://bnhjydw2dolk4" path="res://icon.svg" id="3_gpohj"]
+[ext_resource type="Texture2D" uid="uid://c3sra1s3p4j5o" path="res://scenes/minigames/DropGlass/Asset/TABLE GAME BG.png" id="3_c4j26"]
 [ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Player.gd" id="4_pfi8q"]
+[ext_resource type="Texture2D" uid="uid://54i4ayko3fp7" path="res://scenes/minigames/DropGlass/Asset/TABLE GAME CAT ANIM SHEET.png" id="5_tooat"]
 [ext_resource type="PackedScene" uid="uid://duuwbhgwqnyi6" path="res://scenes/minigames/DropGlass/Asset/prefabs/A.tscn" id="6_3ljht"]
 [ext_resource type="PackedScene" uid="uid://cslomv7i52myw" path="res://scenes/minigames/DropGlass/Asset/prefabs/B.tscn" id="7_bspd1"]
 [ext_resource type="PackedScene" uid="uid://dm5rpnwk07vmq" path="res://scenes/minigames/DropGlass/Asset/prefabs/C.tscn" id="8_xsx3v"]
 [ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/OOB.gd" id="9_est1g"]
 [ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Label.gd" id="10_5d33d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31y4m"]
+atlas = ExtResource("5_tooat")
+region = Rect2(0, 0, 432, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7fmr"]
+atlas = ExtResource("5_tooat")
+region = Rect2(432, 0, 432, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tm130"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31y4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7fmr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cicah"]
 radius = 72.0
@@ -27,29 +49,29 @@ size = Vector2(1.82768, 668)
 size = Vector2(90.7311, 21)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a3gk1"]
-font_size = 50
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n77s"]
-font_size = 50
+font_size = 40
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_x6uib")
 
 [node name="TablePadre" type="Sprite2D" parent="."]
-position = Vector2(-3, -6)
 script = ExtResource("2_3d6jg")
 
 [node name="Table" type="Sprite2D" parent="TablePadre"]
-position = Vector2(704, 337)
-texture = ExtResource("1_gtycp")
+position = Vector2(541, 371)
+scale = Vector2(0.994444, 0.994444)
+texture = ExtResource("3_c4j26")
 
 [node name="PlayerPadre" type="Area2D" parent="."]
 position = Vector2(303, 215)
 script = ExtResource("4_pfi8q")
 
-[node name="Player" type="Sprite2D" parent="PlayerPadre"]
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_gpohj")
+[node name="Player" type="AnimatedSprite2D" parent="PlayerPadre"]
+scale = Vector2(0.437037, 0.463333)
+sprite_frames = SubResource("SpriteFrames_tm130")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPadre"]
 shape = SubResource("CircleShape2D_cicah")
@@ -99,7 +121,7 @@ scale = Vector2(15.32, 1)
 script = ExtResource("9_est1g")
 
 [node name="Left" type="CollisionShape2D" parent="Control2/Area2D2"]
-position = Vector2(-41.0901, 331.5)
+position = Vector2(-41.8407, 332)
 shape = SubResource("RectangleShape2D_q8dmy")
 
 [node name="Area2D3" type="Area2D" parent="Control2"]
@@ -117,22 +139,22 @@ scale = Vector2(15.32, 1)
 script = ExtResource("9_est1g")
 
 [node name="Down" type="CollisionShape2D" parent="Control2/Area2D4"]
-position = Vector2(3.59007, 655.5)
+position = Vector2(3.5248, 672)
 shape = SubResource("RectangleShape2D_jwre1")
 
 [node name="Timer" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 111.0
+offset_bottom = 72.0
 scale = Vector2(1.20689, 1.4099)
 text = "TEST"
 label_settings = SubResource("LabelSettings_a3gk1")
 script = ExtResource("10_5d33d")
 
 [node name="Point" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 119.0
-offset_right = 105.0
-offset_bottom = 191.0
+offset_left = 3.0
+offset_top = 71.0
+offset_right = 104.0
+offset_bottom = 129.0
 text = "Test"
 label_settings = SubResource("LabelSettings_8n77s")
 script = ExtResource("10_5d33d")

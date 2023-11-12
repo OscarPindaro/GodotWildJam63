@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dm5rpnwk07vmq"]
 
 [ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Glass.gd" id="1_x42pv"]
-[ext_resource type="Texture2D" uid="uid://b5j83uykej4m2" path="res://scenes/minigames/DropGlass/Asset/C.jpeg" id="1_xb71b"]
+[ext_resource type="Texture2D" uid="uid://biriytofhi76v" path="res://scenes/minigames/DropGlass/Asset/TABLE GAME GLASS.png" id="2_6xh0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5njl"]
 size = Vector2(475, 499)
@@ -10,8 +10,8 @@ size = Vector2(475, 499)
 script = ExtResource("1_x42pv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_xb71b")
+scale = Vector2(1.02778, 1.00855)
+texture = ExtResource("2_6xh0a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.25, 0.25)

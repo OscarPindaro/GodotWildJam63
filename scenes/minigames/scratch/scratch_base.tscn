@@ -8,12 +8,11 @@ top_level = true
 z_index = 5
 y_sort_enabled = true
 
-[node name="MinigameTimer" parent="." index="2"]
+[node name="MinigameTimer" parent="." index="3"]
 wait_time = 100.0
 
-[node name="TitleScreen" parent="." index="3"]
+[node name="TitleScreen" parent="." index="4"]
 top_level = true
-z_index = 6
 y_sort_enabled = true
 
 [node name="Wolrd" parent="." index="5" instance=ExtResource("2_ba6u2")]
@@ -22,3 +21,4 @@ y_sort_enabled = true
 
 [connection signal="finished" from="AnnouncerPlayer" to="Wolrd" method="_on_announcer_player_finished"]
 [connection signal="timeout" from="MinigameTimer" to="Wolrd" method="_on_minigame_timer_timeout"]
+[connection signal="score" from="Wolrd" to="." method="_on_receive_score"]
