@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var movement_speed = 300
 
 
-@export var map_zoom = Vector2.ONE
-
 # Interactable areas the player is in
 var interactables = []
 
@@ -39,8 +37,7 @@ func _ready():
 func _process(_delta):
 	#print(interactables)
 	if(not inMain):
-		velocity = Vector2.ZERO
-		pass
+		return
 	
 	
 	# Interacting with objects
@@ -50,13 +47,14 @@ func _process(_delta):
 		if validInteractables.size() > 0:
 			validInteractables[0]._player_interact(self)
 	
-	# Show total map when holding "show_map"
-	if Input.is_action_just_pressed("show_map"):
-		$PlayerCamera.zoom = map_zoom
-	elif Input.is_action_just_released("show_map"):
-		$PlayerCamera.zoom = base_zoom
+	
 
 func _physics_process(_delta):
+	
+	if(not inMain):
+		velocity = Vector2.ZERO
+		return
+	
 	# Movement
 	var direction = Vector2.ZERO
 	if Input.is_action_pressed("player_move_up"):
@@ -88,26 +86,48 @@ func _physics_process(_delta):
 		was_moving = false
 		#audio_player.stop()
 	
+	
+	var old_velocity = velocity
 	var target_velocity = direction.normalized() * movement_speed
 	velocity = target_velocity
 	move_and_slide()
 
 	# Animations
+	#var sprite = $AnimatedSprite
+	#if target_velocity == Vector2.ZERO:
+	#	sprite.animation = "idle"
+	#elif target_velocity.x > 0:
+	#	sprite.animation = "move_horizontal"
+	#	sprite.flip_h = false;
+	#elif target_velocity.x < 0:
+	#	sprite.animation = "move_horizontal"
+	#	sprite.flip_h = true;
+	#elif target_velocity.y > 0:
+	#	sprite.animation = "move_down"
+	#	sprite.flip_h = false;
+	#else:
+	#	sprite.animation = "move_up"
+	#	sprite.flip_h = false;
+	#sprite.play()
+	
 	var sprite = $AnimatedSprite
 	if target_velocity == Vector2.ZERO:
 		sprite.animation = "idle"
-	elif target_velocity.x > 0:
-		sprite.animation = "move_horizontal"
-		sprite.flip_h = false;
-	elif target_velocity.x < 0:
-		sprite.animation = "move_horizontal"
-		sprite.flip_h = true;
 	elif target_velocity.y > 0:
 		sprite.animation = "move_down"
 		sprite.flip_h = false;
 	else:
 		sprite.animation = "move_up"
 		sprite.flip_h = false;
+	
+	
+	if target_velocity.x > 0 or (was_moving and old_velocity.x > 0):
+		sprite.flip_h = true;
+	elif target_velocity.x < 0 or (was_moving and old_velocity.x < 0):
+		sprite.flip_h = false;
+		
+		
+		
 	sprite.play()
 
 #func grab_item(item):
@@ -141,9 +161,11 @@ func _physics_process(_delta):
 func enter_area(area):
 	if area.is_in_group("interactable"):
 		interactables.push_front(area)
+		$InteractButton.visible = true
 
 func exit_area(area):
 	interactables.erase(area)
+	$InteractButton.visible = false
 	
 func connect_runtime_interactable(interactable):
 	interactable._player_entered.connect(Callable(enter_area))

@@ -39,7 +39,7 @@ func _on_announcer_player_finished():
 
 func _on_minigame_timer_timeout():
 	end_sprite.visible = true
-	_minigame_ending.emit(self)
+	$EndAnnouncer.play()
 
 
 func _on_receive_score(score):
@@ -47,3 +47,7 @@ func _on_receive_score(score):
 	score_label.text = str(current_score)
 	
 	
+
+
+func _on_end_announcer_finished():
+	_minigame_ending.emit(self)
