@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xhjh"]
-size = Vector2(79.1939, 19.5925)
+size = Vector2(79.1939, 29.9885)
 
 [node name="Finestra" instance=ExtResource("1_5yu2m")]
 
