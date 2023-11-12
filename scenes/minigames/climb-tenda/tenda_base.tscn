@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8iy38txc2fh"]
 
-[ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
+[ext_resource type="PackedScene" uid="uid://bfko0l37v0cu6" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
 [ext_resource type="PackedScene" uid="uid://bju5hg6o17h2o" path="res://scenes/minigames/climb-tenda/main.tscn" id="2_xmj5x"]
 
 [node name="BaseMinigame" instance=ExtResource("1_gxanw")]

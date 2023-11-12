@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx6mboddkkntq"]
+[gd_scene load_steps=7 format=3 uid="uid://dx6mboddkkntq"]
 
 [ext_resource type="Script" path="res://Asset/Scripts/Main.gd" id="1_dfv5q"]
 [ext_resource type="Texture2D" uid="uid://dodrrwklj5rj4" path="res://images/Png/whiteSquare.png" id="2_hieye"]
 [ext_resource type="Script" path="res://Asset/Scripts/mouse.gd" id="3_ox8vj"]
 [ext_resource type="Script" path="res://Asset/Scripts/Label.gd" id="4_fnutm"]
+[ext_resource type="AudioStream" uid="uid://lkcaa2628y27" path="res://audio/Scratch_Sounds/long_Scratch2.wav" id="5_8qyuo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kpr5b"]
 font_size = 35
@@ -27,3 +28,7 @@ offset_right = 895.0
 offset_bottom = 269.0
 label_settings = SubResource("LabelSettings_kpr5b")
 script = ExtResource("4_fnutm")
+
+[node name="SE" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8qyuo")
+volume_db = 20.0

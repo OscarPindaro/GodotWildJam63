@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scenes/minigames/BaseMinigame.gd"
 #load
 var Pad  = preload("res://scenes/minigames/scratch/taglio.tscn")
 #var Line = preload("res://scenes/minigames/Line.tscn")
@@ -6,6 +6,7 @@ var Pad  = preload("res://scenes/minigames/scratch/taglio.tscn")
 #??
 var CC = Sprite2D
 var PT = Label
+var SE = AudioStreamPlayer2D
 #var
 var curentComplition = 0
 var maxComplition = 100
@@ -27,6 +28,9 @@ func _ready():
 	var nodePath2:NodePath = "./PT"
 	PT = Label.new()
 	PT = get_node(nodePath2)
+	var nodePath3:NodePath = "./SE"
+	SE = AudioStreamPlayer2D.new()
+	SE = get_node(nodePath3)
 	pass
 
 func _process(delta):
@@ -38,12 +42,15 @@ func _input(event):
 			if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 				isPressed = true
 				startPoint = CC._returnMousePos()
+				#start sound
+				SE.play()
 		if event is InputEventMouseButton and isPressed == true:
 			if  (event.button_index == MOUSE_BUTTON_LEFT and event.is_released()):
 				timer = 0
 				endPoint = CC._returnMousePos()
 				_spawnSquare()
 				isPressed = false
+				SE.stop()
 ###################################
 func _spawnSquare():
 	#spawn square

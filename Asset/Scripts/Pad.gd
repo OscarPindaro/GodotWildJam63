@@ -25,6 +25,13 @@ func _relativeSize(startPoint, endPoint):
 	
 	res["width"] = abs(endPoint.x - startPoint.x)
 	res["height"] = abs(endPoint.y - startPoint.y)
+	
+	if res["width"] < 20:
+		res["width"] = 20
+	if res["height"] <20:
+		res["height"] = 20
+	
+	
 	Area = res["width"] * res["height"]
 	return res
 	
@@ -44,11 +51,16 @@ func _setSize(fatherSize,relativeSize):
 func _setPosition(startPoint, endPoint, pad):
 	var temp = Vector2(startPoint.x,startPoint.y)
 	pad.set_position(temp)
+	
+	
 	var AC = abs(endPoint.x - startPoint.x)
 	var BC =  abs(endPoint.y - startPoint.y)	
+	
 	var a = atan(BC/AC)
 	var degrees = a * (180 / PI)
+	
 	pad.rotate(degrees)
+	
 	pass
 
 	

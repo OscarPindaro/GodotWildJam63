@@ -1,3 +1,5 @@
+class_name BaseMinigame
+
 extends Node2D
 
 var announcer_audio_player : AudioStreamPlayer 

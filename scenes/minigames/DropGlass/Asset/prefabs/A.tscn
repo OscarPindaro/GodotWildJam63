@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://duuwbhgwqnyi6"]
+
+[ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Glass.gd" id="1_7haq2"]
+[ext_resource type="Texture2D" uid="uid://cb3stn2027hvg" path="res://scenes/minigames/DropGlass/Asset/A.png" id="1_vhthe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrrdh"]
+size = Vector2(492, 470)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_7haq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_vhthe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_xrrdh")
