@@ -4,7 +4,9 @@ signal _minigame_started()
 
 signal _minigame_ended()
 
-var starters 
+var starters = []
+
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,4 +24,15 @@ func _process(delta):
 
 
 func _startMinigame(minigame):
-	minigame.start()
+	#var instance = load(minigamePath).instantiate() 
+	var instance = minigame.instantiate() 
+	#print(minigamePath)
+	#var instance = new()
+	add_child(instance)
+	instance._minigame_ending.connect(Callable(_endMinigame))
+	pass
+	
+func _endMinigame(minigame):
+	
+	minigame.queue_free()
+	pass

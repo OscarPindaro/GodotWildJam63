@@ -1,5 +1,8 @@
 extends Node2D
 
+# signals
+signal _minigame_ending(minigame)
+
 var announcer_audio_player : AudioStreamPlayer 
 var music_audio_player : AudioStreamPlayer
 var title_sprite: Sprite2D 
@@ -16,7 +19,6 @@ var current_score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	score_label.text = str(current_score)
-	$MinigameTimer.start()
 	announcer_audio_player = $AnnouncerPlayer
 	music_audio_player = $MusicStreamPlayer
 	title_sprite = $TitleScreen
@@ -37,6 +39,7 @@ func _on_announcer_player_finished():
 
 func _on_minigame_timer_timeout():
 	end_sprite.visible = true
+	_minigame_ending.emit(self)
 
 
 func _on_receive_score(score):

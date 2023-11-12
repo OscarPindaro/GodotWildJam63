@@ -3,15 +3,15 @@ extends CharacterBody2D
 # Player movement speed in pixels/sec
 @export var movement_speed = 300
 
-@export var sus_if_seen = 20
+
 @export var map_zoom = Vector2.ONE
 
 # Interactable areas the player is in
 var interactables = []
 
-# Held item
-var held_item = null
-var wasPointOfInterest = false
+var controllers = []
+
+var inMain = true
 
 # Base camera zoom
 var base_zoom = Vector2.ZERO
@@ -26,12 +26,23 @@ func _ready():
 	for i in range(0, interactableStuff.size()):
 		interactableStuff[i]._player_entered.connect(Callable(enter_area))
 		interactableStuff[i]._player_exited.connect(Callable(exit_area))
+	
+	var controllers = get_tree().get_nodes_in_group("controller")
+	for i in range(0, controllers.size()):
+		controllers[i]._minigame_started.connect(Callable(_loseControl))
+		controllers[i]._minigame_ended.connect(Callable(_getControl))
+		
 	was_moving = false
 	# Get camera zoom
 	#base_zoom = $PlayerCamera.zoom
 
 func _process(_delta):
 	#print(interactables)
+	if(not inMain):
+		velocity = Vector2.ZERO
+		pass
+	
+	
 	# Interacting with objects
 	if Input.is_action_just_pressed("player_interact") and not interactables.is_empty():
 		var validInteractables = interactables.filter(func(x): return not x.is_in_group("item"))
@@ -137,4 +148,11 @@ func exit_area(area):
 func connect_runtime_interactable(interactable):
 	interactable._player_entered.connect(Callable(enter_area))
 	interactable._player_exited.connect(Callable(exit_area))
+	
+	
+func _getControl():
+	inMain = true
+	
+func _loseControl():
+	inMain = false
 

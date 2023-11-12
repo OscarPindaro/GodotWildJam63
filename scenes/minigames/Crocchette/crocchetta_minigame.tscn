@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://07re4p1i4uoc"]
 
 [ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_x8fe6"]
-[ext_resource type="AudioStream" path="res://audio/Vox_Announcements/ShakeTheTreats1_eng.wav" id="2_2x8jg"]
+[ext_resource type="AudioStream" uid="uid://1viwpab72rbo" path="res://audio/Vox_Announcements/ShakeTheTreats1_eng.wav" id="2_2x8jg"]
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocKiller.gd" id="3_o6m1x"]
 [ext_resource type="PackedScene" uid="uid://uthi7ik2aabt" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
 [ext_resource type="Texture2D" uid="uid://dhb6yqmdlqimi" path="res://images/crocchetta/cucina.png" id="5_guihh"]
@@ -24,9 +24,6 @@ texture = ExtResource("5_guihh")
 
 [node name="AnnouncerPlayer" parent="." index="2"]
 stream = ExtResource("2_2x8jg")
-
-[node name="MinigameTimer" parent="." index="3"]
-wait_time = 40.0
 
 [node name="CrocchettaBag" parent="." index="7" instance=ExtResource("3_y76pb")]
 position = Vector2(566, 332)
