@@ -11,7 +11,7 @@
 font_size = 64
 font_color = Color(0.262745, 0.901961, 0.133333, 1)
 
-[node name="BaseMinigame" type="Node2D"]
+[node name="BaseMinigame2" type="Node2D"]
 script = ExtResource("1_6qkdl")
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]

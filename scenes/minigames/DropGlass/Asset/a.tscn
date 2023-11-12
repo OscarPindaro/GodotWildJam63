@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://doc1j68x5ix37"]
+
+[ext_resource type="Texture2D" uid="uid://cb3stn2027hvg" path="res://scenes/minigames/DropGlass/Asset/A.png" id="1_8rkfj"]
+[ext_resource type="Script" path="res://scenes/minigames/DropGlass/Script/Glass.gd" id="2_yugdm"]
+
+[node name="A" type="Sprite2D"]
+texture = ExtResource("1_8rkfj")
+script = ExtResource("2_yugdm")
+
+[node name="Area2D" type="Area2D" parent="."]

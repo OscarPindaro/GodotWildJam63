@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://brr8mhuf50deb"]
+
+[ext_resource type="PackedScene" uid="uid://ckbitv4gjqbt" path="res://scenes/objects/base_minigame_starter.tscn" id="1_bfv7l"]
+[ext_resource type="Texture2D" uid="uid://cejsk5cb4u0lh" path="res://images/KITCHEN.png" id="2_7gckv"]
+[ext_resource type="Texture2D" uid="uid://b7hquflgsi3ui" path="res://images/crocchetta/CROCCHETTS.png" id="3_rgdrs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wib7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7gckv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osams"]
+size = Vector2(69.7538, 20)
+
+[node name="Kitchen" instance=ExtResource("1_bfv7l")]
+
+[node name="AnimatedSprite2D" parent="Area2D" index="0"]
+position = Vector2(46, 29)
+sprite_frames = SubResource("SpriteFrames_wib7i")
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2(151, 149)
+rotation = 0.464757
+shape = SubResource("RectangleShape2D_osams")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-122, 97, -95, 110, 0, 63, 186, 155, 214, 142, 0, 30)
+
+[node name="Crocchetts" type="Sprite2D" parent="." index="2"]
+position = Vector2(176, 94)
+texture = ExtResource("3_rgdrs")
