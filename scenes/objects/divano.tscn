@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://5ix5kril2ye8"]
 
 [ext_resource type="PackedScene" uid="uid://ckbitv4gjqbt" path="res://scenes/objects/base_minigame_starter.tscn" id="1_3pdkn"]
-[ext_resource type="Texture2D" path="res://images/divano/SOFA.png" id="2_ucmcb"]
+[ext_resource type="Texture2D" uid="uid://5idj37ji8ri8" path="res://images/divano/SOFA.png" id="2_ucmcb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1imi7"]
 animations = [{

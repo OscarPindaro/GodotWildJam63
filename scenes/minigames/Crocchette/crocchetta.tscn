@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5fen4omtcxep"]
 
-[ext_resource type="Script" path="res://scenes/minigames/Crocchette/crocchetta.gd" id="1_qn1q4"]
+[ext_resource type="Script" path="res://scenes/minigames/Crocchette/croccheta.gd" id="1_qn1q4"]
 [ext_resource type="Texture2D" uid="uid://chhkveja5h25t" path="res://images/crocchetta/CROCCHETTS GAME CROCCHETT.png" id="2_8t1pj"]
 [ext_resource type="AudioStream" uid="uid://e2h4kvh6h4sm" path="res://audio/Shake_treats/Falling_Treats5.wav" id="3_7ej83"]
 
