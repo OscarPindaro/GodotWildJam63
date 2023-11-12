@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpbbdblke6ad2"]
+
+[ext_resource type="PackedScene" uid="uid://bfko0l37v0cu6" path="res://scenes/minigames/base_minigame.tscn" id="1_qhlt2"]
+[ext_resource type="PackedScene" uid="uid://builj7pcu3rcw" path="res://scenes/minigames/DropGlass/world.tscn" id="2_d7527"]
+
+[node name="BreakMinigame" instance=ExtResource("1_qhlt2")]
+
+[node name="World" parent="." index="8" instance=ExtResource("2_d7527")]
+
+[connection signal="score" from="World" to="." method="_on_receive_score"]

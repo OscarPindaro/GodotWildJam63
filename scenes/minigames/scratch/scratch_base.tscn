@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgu8mpdeu7yh8"]
+
+[ext_resource type="PackedScene" uid="uid://bfko0l37v0cu6" path="res://scenes/minigames/base_minigame.tscn" id="1_t6aha"]
+[ext_resource type="PackedScene" uid="uid://dx6mboddkkntq" path="res://scenes/minigames/scratch/wolrd.tscn" id="2_ba6u2"]
+
+[node name="BaseMinigame" instance=ExtResource("1_t6aha")]
+top_level = true
+z_index = 5
+y_sort_enabled = true
+
+[node name="MinigameTimer" parent="." index="3"]
+wait_time = 100.0
+
+[node name="TitleScreen" parent="." index="4"]
+top_level = true
+y_sort_enabled = true
+
+[node name="Wolrd" parent="." index="5" instance=ExtResource("2_ba6u2")]
+z_as_relative = false
+y_sort_enabled = true
+
+[connection signal="finished" from="AnnouncerPlayer" to="Wolrd" method="_on_announcer_player_finished"]
+[connection signal="timeout" from="MinigameTimer" to="Wolrd" method="_on_minigame_timer_timeout"]
+[connection signal="score" from="Wolrd" to="." method="_on_receive_score"]
