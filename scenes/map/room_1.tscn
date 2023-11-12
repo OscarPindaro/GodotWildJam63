@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://3r1qgihc1y7n"]
+[gd_scene load_steps=6 format=3 uid="uid://3r1qgihc1y7n"]
 
-[ext_resource type="PackedScene" path="res://scenes/map/TileMapRoom.tscn" id="1_47w1q"]
-[ext_resource type="PackedScene" uid="uid://d0w7kroa2y78p" path="res://scenes/player/player.tscn" id="2_e3uya"]
+[ext_resource type="PackedScene" uid="uid://h8lc1f6njmv" path="res://scenes/map/TileMapRoom.tscn" id="1_47w1q"]
+[ext_resource type="PackedScene" uid="uid://sljqfmqu7jyn" path="res://scenes/player/player.tscn" id="2_e3uya"]
 [ext_resource type="PackedScene" uid="uid://yamqrmne1408" path="res://scenes/objects/test_mobilia.tscn" id="3_ytdw6"]
-[ext_resource type="PackedScene" uid="uid://beghkco0gs0yc" path="res://scenes/minigames/minigame_dock.tscn" id="4_gijfu"]
+[ext_resource type="PackedScene" uid="uid://i7l7hys0rdbs" path="res://scenes/minigames/climb-tenda/tenda_base.tscn" id="4_21qi7"]
+[ext_resource type="PackedScene" uid="uid://blcki6ewb52y" path="res://scenes/minigames/minigame_dock.tscn" id="4_gijfu"]
 
 [node name="Room1" type="Node2D"]
 
@@ -18,5 +19,6 @@ scale = Vector2(1.07094, 0.941911)
 
 [node name="TestMobilia" parent="." instance=ExtResource("3_ytdw6")]
 position = Vector2(606, 465)
+minigamePath = ExtResource("4_21qi7")
 
 [node name="MinigameDock" parent="." instance=ExtResource("4_gijfu")]

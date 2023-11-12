@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0w7kroa2y78p"]
+[gd_scene load_steps=5 format=3 uid="uid://sljqfmqu7jyn"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3fafs"]
-[ext_resource type="Texture2D" path="res://images/GATTO.png" id="2_bncdm"]
+[ext_resource type="Texture2D" uid="uid://bsxpq6q3u6jif" path="res://images/GATTO.png" id="2_bncdm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x2yq7"]
 animations = [{
