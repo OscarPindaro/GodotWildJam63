@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://i7l7hys0rdbs" path="res://scenes/minigames/climb-tenda/tenda_base.tscn" id="4_21qi7"]
 [ext_resource type="PackedScene" uid="uid://dl3236tyk774r" path="res://scenes/minigames/minigame_dock.tscn" id="4_gijfu"]
 [ext_resource type="PackedScene" uid="uid://07re4p1i4uoc" path="res://scenes/minigames/Crocchette/crocchetta_minigame.tscn" id="4_uiqw0"]
-[ext_resource type="PackedScene" path="res://scenes/objects/Finestra.tscn" id="6_wbhb7"]
+[ext_resource type="PackedScene" uid="uid://1cu0y5r5edjv" path="res://scenes/objects/Finestra.tscn" id="6_wbhb7"]
 [ext_resource type="PackedScene" uid="uid://5ix5kril2ye8" path="res://scenes/objects/divano.tscn" id="7_sufyc"]
 [ext_resource type="PackedScene" uid="uid://brr8mhuf50deb" path="res://scenes/objects/kitchen.tscn" id="8_cmxxh"]
 
@@ -47,6 +47,7 @@ minigamePath = ExtResource("4_uiqw0")
 
 [node name="Kitchen" parent="." instance=ExtResource("8_cmxxh")]
 position = Vector2(515, 81)
+minigamePath = ExtResource("4_uiqw0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
