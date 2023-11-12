@@ -60,6 +60,7 @@ func _process(delta):
 				for i in range(n_crocs):
 					var croc: RigidBody2D = crocchetta_scene.instantiate()
 					$Crocs.add_child(croc)
+					croc.z_index = self.z_index + 1
 					var random_noise_x = 0
 					var random_noise_y = 0
 					croc.global_position = $SpawnPoint.global_position + Vector2(rng.randfn(10, 30),rng.randfn(10, 30))
