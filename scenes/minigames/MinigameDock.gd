@@ -25,6 +25,7 @@ func _process(delta):
 
 func _startMinigame(minigame):
 	#var instance = load(minigamePath).instantiate() 
+	_minigame_started.emit()
 	var instance = minigame.instantiate() 
 	#print(minigamePath)
 	#var instance = new()
@@ -35,4 +36,5 @@ func _startMinigame(minigame):
 func _endMinigame(minigame):
 	
 	minigame.queue_free()
+	_minigame_ended.emit()
 	pass
