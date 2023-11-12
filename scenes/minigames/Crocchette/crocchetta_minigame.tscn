@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://07re4p1i4uoc"]
 
-[ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_x8fe6"]
-[ext_resource type="AudioStream" uid="uid://1viwpab72rbo" path="res://audio/Vox_Announcements/ShakeTheTreats1_eng.wav" id="2_2x8jg"]
-[ext_resource type="Texture2D" uid="uid://dma7o8tw0exr8" path="res://images/crocchetta/CROCCHETTS GAME BG.png" id="2_cqgco"]
+[ext_resource type="PackedScene" uid="uid://bfko0l37v0cu6" path="res://scenes/minigames/base_minigame.tscn" id="1_x8fe6"]
+[ext_resource type="AudioStream" uid="uid://cb64rowvdx66l" path="res://audio/Vox_Announcements/ShakeTheTreats1_eng.wav" id="2_2x8jg"]
+[ext_resource type="Texture2D" uid="uid://lyvfctclx2e8" path="res://images/crocchetta/CROCCHETTS GAME BG.png" id="2_cqgco"]
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocKiller.gd" id="3_o6m1x"]
-[ext_resource type="PackedScene" uid="uid://uthi7ik2aabt" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
-[ext_resource type="Texture2D" uid="uid://bdx2yllb4kjvt" path="res://images/crocchetta/shake_the_treats.png" id="4_0g0b2"]
-[ext_resource type="Texture2D" uid="uid://cgasjegfattci" path="res://images/crocchetta/instructions.png" id="7_0it08"]
+[ext_resource type="PackedScene" uid="uid://bd73lk6kk316f" path="res://scenes/minigames/Crocchette/CrocchettaBag.tscn" id="3_y76pb"]
+[ext_resource type="Texture2D" uid="uid://uksf6gd68cbq" path="res://images/crocchetta/shake_the_treats.png" id="4_0g0b2"]
+[ext_resource type="Texture2D" uid="uid://f3s8q863m6j7" path="res://images/crocchetta/instructions.png" id="7_0it08"]
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/instruction.gd" id="8_myojl"]
-[ext_resource type="PackedScene" uid="uid://jk4cojd8fn63" path="res://scenes/paw.tscn" id="9_uu4sn"]
+[ext_resource type="PackedScene" path="res://scenes/paw.tscn" id="9_uu4sn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c12f"]
 size = Vector2(114, 789.5)
@@ -89,4 +89,3 @@ scale = Vector2(3, 3)
 [connection signal="finished" from="AnnouncerPlayer" to="CrocchettaBag" method="_on_announcer_player_finished"]
 [connection signal="finished" from="AnnouncerPlayer" to="Description" method="_on_announcer_player_finished"]
 [connection signal="timeout" from="MinigameTimer" to="CrocchettaBag" method="_on_minigame_timer_timeout"]
-[connection signal="score" from="CrocchettaBag" to="." method="_on_receive_score"]
