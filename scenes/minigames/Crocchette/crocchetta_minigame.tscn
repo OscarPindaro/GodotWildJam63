@@ -20,6 +20,7 @@ size = Vector2(292.75, 850)
 size = Vector2(1589.5, 73)
 
 [node name="CrocchettaMinigame" instance=ExtResource("1_x8fe6")]
+z_index = 5
 y_sort_enabled = true
 
 [node name="Cucina" type="Sprite2D" parent="." index="0"]
@@ -50,18 +51,24 @@ script = ExtResource("3_o6m1x")
 croc_bag_path = NodePath("../CrocchettaBag")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="9"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2(-60, 333)
 shape = SubResource("RectangleShape2D_3c12f")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." index="10"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0"]
 position = Vector2(1238, 326)
 shape = SubResource("RectangleShape2D_bobyc")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="11"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
 position = Vector2(686, -42)

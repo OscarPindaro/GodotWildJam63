@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3r1qgihc1y7n"]
+[gd_scene load_steps=13 format=3 uid="uid://3r1qgihc1y7n"]
 
 [ext_resource type="PackedScene" uid="uid://h8lc1f6njmv" path="res://scenes/map/TileMapRoom.tscn" id="1_47w1q"]
 [ext_resource type="PackedScene" uid="uid://sljqfmqu7jyn" path="res://scenes/player/player.tscn" id="2_e3uya"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://5ix5kril2ye8" path="res://scenes/objects/divano.tscn" id="7_sufyc"]
 [ext_resource type="PackedScene" uid="uid://brr8mhuf50deb" path="res://scenes/objects/kitchen.tscn" id="8_cmxxh"]
 [ext_resource type="PackedScene" uid="uid://ccpm106bfj60a" path="res://scenes/objects/table.tscn" id="9_ihsu5"]
+[ext_resource type="Texture2D" uid="uid://tys3qnvgyxv5" path="res://images/CARPET 2.png" id="9_n38le"]
+[ext_resource type="Texture2D" uid="uid://uqikf3262svc" path="res://images/CARPET 1.png" id="11_d8a2g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_syxhk"]
 font_size = 64
@@ -24,7 +26,7 @@ layer_1/tile_data = PackedInt32Array(1245184, 2, 0, 1179649, 2, 0, 1114113, 2, 0
 layer_2/tile_data = PackedInt32Array(3735578, 0, 1, 3670027, 0, 1)
 
 [node name="player" parent="." instance=ExtResource("2_e3uya")]
-position = Vector2(563, 434)
+position = Vector2(538, 440)
 
 [node name="MinigameDock" parent="." instance=ExtResource("4_gijfu")]
 
@@ -42,7 +44,21 @@ minigamePath = ExtResource("4_21qi7")
 [node name="CollisionShape2D" parent="Finestra/Area2D" index="1"]
 position = Vector2(-16.3722, 74.6252)
 
+[node name="Carpet2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(588, 346)
+scale = Vector2(1.72222, 1.72222)
+texture = ExtResource("9_n38le")
+
+[node name="Carpet1" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(267, 282)
+rotation = 3.14159
+scale = Vector2(1.42135, -1.42135)
+texture = ExtResource("11_d8a2g")
+
 [node name="Divano" parent="." instance=ExtResource("7_sufyc")]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(237, 250)
 scale = Vector2(-1.25, 1.25)
@@ -61,6 +77,8 @@ polygon = PackedVector2Array(670, 640, 1126, 415, 1125, 449, 672, 674, 56, 366, 
 polygon = PackedVector2Array(64, 336, 518, 108, 730, 221, 1122, 416, 1186, 376, 528, 65, 358, 108, 24, 291)
 
 [node name="Table" parent="." instance=ExtResource("9_ihsu5")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(589, 322)
 
 [editable path="Finestra"]
