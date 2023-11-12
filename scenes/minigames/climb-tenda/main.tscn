@@ -59,7 +59,6 @@ animation = &"sxPaw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cat"]
 position = Vector2(0, -48.3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m0mmy")
 
 [node name="cat_climbing" type="AudioStreamPlayer" parent="cat"]
@@ -83,7 +82,7 @@ wait_time = 5.0
 
 [node name="letter_timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="position1" type="Area2D" parent="."]
 position = Vector2(402, -49)
@@ -105,6 +104,7 @@ texture = ExtResource("10_515tv")
 
 [connection signal="area_entered" from="cat" to="cat" method="_on_area_entered"]
 [connection signal="area_exited" from="cat" to="cat" method="_on_area_exited"]
+[connection signal="cat_score" from="cat" to="." method="_on_cat_cat_score"]
 [connection signal="hit" from="cat" to="Background" method="_on_cat_hit"]
 [connection signal="timeout" from="main_timer" to="." method="_on_main_timer_timeout"]
 [connection signal="timeout" from="letter_timer" to="." method="_on_letter_timer_timeout"]
