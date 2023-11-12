@@ -59,7 +59,6 @@ animation = &"sxPaw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cat"]
 position = Vector2(0, -48.3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m0mmy")
 
 [node name="cat_climbing" type="AudioStreamPlayer" parent="cat"]

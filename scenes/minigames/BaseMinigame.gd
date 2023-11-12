@@ -4,6 +4,7 @@ var announcer_audio_player : AudioStreamPlayer
 var music_audio_player : AudioStreamPlayer
 var title_sprite: Sprite2D 
 var end_sprite: Sprite2D 
+var description_sprite : Sprite2D
 var cum = 0
 var start_bar = false
 var current_score = 0
@@ -21,6 +22,7 @@ func _ready():
 	music_audio_player = $MusicStreamPlayer
 	title_sprite = $TitleScreen
 	end_sprite = $EndSprite
+	description_sprite = $Description
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -33,11 +35,11 @@ func _on_announcer_player_finished():
 	title_sprite.visible = false
 	start_bar = true
 	$MinigameTimer.start()
-	
+	description_sprite.visible = false
 
 func _on_minigame_timer_timeout():
 	end_sprite.visible = true
-
+	
 
 func _on_receive_score(score):
 	current_score += score
