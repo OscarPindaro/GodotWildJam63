@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://i7l7hys0rdbs"]
 
-[ext_resource type="PackedScene" uid="uid://bfko0l37v0cu6" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
+[ext_resource type="PackedScene" uid="uid://cf48smj3g2hok" path="res://scenes/minigames/base_minigame.tscn" id="1_gxanw"]
 [ext_resource type="PackedScene" uid="uid://bju5hg6o17h2o" path="res://scenes/minigames/climb-tenda/main.tscn" id="2_xmj5x"]
-[ext_resource type="AudioStream" uid="uid://mqnmn6g6x21g" path="res://audio/Vox_Announcements/ClimbTheCurtains1_eng.wav" id="3_cgqfb"]
-[ext_resource type="Texture2D" uid="uid://dbbyj6vl7d3dm" path="res://images/climb-tenda/start-game.png" id="3_cmgys"]
-[ext_resource type="Texture2D" uid="uid://mtnjc3lamsps" path="res://images/climb-tenda/description.png" id="5_5sh5x"]
+[ext_resource type="AudioStream" uid="uid://ckp5kgxrxx6q3" path="res://audio/Vox_Announcements/ClimbTheCurtains1_eng.wav" id="3_cgqfb"]
+[ext_resource type="Texture2D" uid="uid://dbo16agw18gr2" path="res://images/climb-tenda/start-game.png" id="3_cmgys"]
+[ext_resource type="Texture2D" uid="uid://u1csjg5owoks" path="res://images/climb-tenda/description.png" id="5_5sh5x"]
 
 [node name="BaseMinigame2" instance=ExtResource("1_gxanw")]
 position = Vector2(2, 0)
@@ -19,7 +19,7 @@ volume_db = 5.0
 volume_db = 5.0
 
 [node name="MinigameTimer" parent="." index="4"]
-wait_time = 10.0
+wait_time = 20.0
 autostart = false
 
 [node name="TitleScreen" parent="." index="5"]

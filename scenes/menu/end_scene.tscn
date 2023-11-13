@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cf1rd7mguhp08"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/end_scene.gd" id="1_8x6qc"]
-[ext_resource type="FontFile" uid="uid://b3koo6es782nm" path="res://images/DustDemonBold.ttf" id="1_keyho"]
-[ext_resource type="FontFile" uid="uid://ds6bvk4l7h6yl" path="res://images/HandwritingCR-2.ttf" id="2_m1pnp"]
-[ext_resource type="Texture2D" uid="uid://bhao8lyqc04v6" path="res://images/paws.jpg" id="4_ckjm5"]
-[ext_resource type="AudioStream" uid="uid://cov1542ehf2sm" path="res://audio/End_scene/Shirley_end.wav" id="4_vef63"]
+[ext_resource type="FontFile" uid="uid://nrhiyw6wqdgb" path="res://images/DustDemonBold.ttf" id="1_keyho"]
+[ext_resource type="FontFile" uid="uid://ry30ppvgrwv5" path="res://images/HandwritingCR-2.ttf" id="2_m1pnp"]
+[ext_resource type="Texture2D" uid="uid://d4cyhek8ktj6r" path="res://images/paws.jpg" id="4_ckjm5"]
+[ext_resource type="AudioStream" uid="uid://vm2ryrxjcylm" path="res://audio/End_scene/Shirley_end.wav" id="4_vef63"]
 
 [node name="end_scene" type="Control"]
 layout_mode = 3
