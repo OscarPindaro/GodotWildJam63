@@ -62,7 +62,7 @@ position = Vector2(0, -48.3)
 shape = SubResource("RectangleShape2D_m0mmy")
 
 [node name="cat_climbing" type="AudioStreamPlayer" parent="cat"]
-volume_db = 15.0
+volume_db = 10.0
 
 [node name="cat_angry" type="AudioStreamPlayer" parent="cat"]
 
