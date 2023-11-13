@@ -1,23 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgu8mpdeu7yh8"]
+[gd_scene load_steps=7 format=3 uid="uid://cgu8mpdeu7yh8"]
 
 [ext_resource type="PackedScene" uid="uid://bfko0l37v0cu6" path="res://scenes/minigames/base_minigame.tscn" id="1_t6aha"]
+[ext_resource type="AudioStream" uid="uid://ds2j3sg13yqny" path="res://audio/Vox_Announcements/ScratchTheSofa1_eng.wav" id="2_4mw4i"]
 [ext_resource type="PackedScene" uid="uid://dx6mboddkkntq" path="res://scenes/minigames/scratch/wolrd.tscn" id="2_ba6u2"]
+[ext_resource type="Texture2D" uid="uid://64hf528o8p3l" path="res://images/Scratch Sofa/coollogo_com-255275539.png" id="3_nywrn"]
+[ext_resource type="Texture2D" uid="uid://b2ycaut0rrlta" path="res://images/Scratch Sofa/coollogo_com-255625336.png" id="5_6audi"]
+[ext_resource type="PackedScene" uid="uid://jk4cojd8fn63" path="res://scenes/paw.tscn" id="6_4wp6n"]
 
 [node name="BaseMinigame" instance=ExtResource("1_t6aha")]
-top_level = true
 z_index = 5
 y_sort_enabled = true
 
+[node name="AnnouncerPlayer" parent="." index="1"]
+stream = ExtResource("2_4mw4i")
+
 [node name="MinigameTimer" parent="." index="3"]
-wait_time = 100.0
+wait_time = 20.0
+one_shot = true
 
 [node name="TitleScreen" parent="." index="4"]
 top_level = true
 y_sort_enabled = true
+texture = ExtResource("3_nywrn")
 
 [node name="Wolrd" parent="." index="5" instance=ExtResource("2_ba6u2")]
-z_as_relative = false
-y_sort_enabled = true
+z_as_relative = true
+
+[node name="Label" parent="." index="8"]
+offset_left = 920.0
+offset_top = 32.0
+offset_right = 960.0
+offset_bottom = 120.0
+
+[node name="Description" type="Sprite2D" parent="." index="9"]
+position = Vector2(556, 395)
+scale = Vector2(0.53937, 0.53937)
+texture = ExtResource("5_6audi")
+
+[node name="Paw" parent="." index="10" instance=ExtResource("6_4wp6n")]
 
 [connection signal="finished" from="AnnouncerPlayer" to="Wolrd" method="_on_announcer_player_finished"]
 [connection signal="timeout" from="MinigameTimer" to="Wolrd" method="_on_minigame_timer_timeout"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://cf48smj3g2hok"]
 
 [ext_resource type="Script" path="res://scenes/minigames/BaseMinigame.gd" id="1_6qkdl"]
-[ext_resource type="AudioStream" uid="uid://d2dhmbs2ix1e2" path="res://audio/Music/MiniGameMusic.wav" id="2_b6r85"]
-[ext_resource type="AudioStream" uid="uid://d18tqqw03srr6" path="res://audio/Vox_Announcements/UnrollTheToiletPaper1_ita.wav" id="2_oijt7"]
-[ext_resource type="Texture2D" uid="uid://d3wl8bb0lj4v1" path="res://images/ziopera_title.png" id="3_5sg00"]
-[ext_resource type="AudioStream" uid="uid://bo8gveog1a5a1" path="res://audio/Vox_Announcements/TimesUP.wav" id="3_fijt4"]
-[ext_resource type="Texture2D" uid="uid://bcgfhfbwp1ipb" path="res://images/end-screen.png" id="4_agh1q"]
+[ext_resource type="AudioStream" uid="uid://bda71no7hwd64" path="res://audio/Music/MiniGameMusic.wav" id="2_b6r85"]
+[ext_resource type="AudioStream" uid="uid://ba8goo5e2vrtr" path="res://audio/Vox_Announcements/UnrollTheToiletPaper1_ita.wav" id="2_oijt7"]
+[ext_resource type="Texture2D" uid="uid://bjj42651afqh1" path="res://images/ziopera_title.png" id="3_5sg00"]
+[ext_resource type="AudioStream" uid="uid://d28li3cl5b384" path="res://audio/Vox_Announcements/TimesUP.wav" id="3_fijt4"]
+[ext_resource type="Texture2D" uid="uid://bwophjfn46d4j" path="res://images/end-screen.png" id="4_agh1q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8u00s"]
 font_size = 64

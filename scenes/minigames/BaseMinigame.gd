@@ -48,7 +48,7 @@ func _on_minigame_timer_timeout():
 
 
 func _on_receive_score(score):
-	current_score += score
+	current_score += int(score)
 	score_label.text = str(current_score)
 	
 	

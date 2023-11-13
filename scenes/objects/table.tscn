@@ -28,4 +28,4 @@ polygon = PackedVector2Array(-80, 15, 16, 64, 80, 30, 100, 49, 18, 94, -94, 31)
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(-80, 15, -81, -28, -19, -62, 81, -12, 79, 29, 17, 64)
+polygon = PackedVector2Array(-80, 15, -85, -33, -18, -68, 86, -15, 79, 29, 17, 64)

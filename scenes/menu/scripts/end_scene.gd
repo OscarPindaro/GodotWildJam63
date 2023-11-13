@@ -20,5 +20,5 @@ func _on_play_button_pressed():
 
 
 func _on_end_line_finished():
-	$PlayButton.visible = true
+	#$PlayButton.visible = true
 	pass # Replace with function body.

@@ -1,28 +1,32 @@
 [gd_scene load_steps=7 format=3 uid="uid://dx6mboddkkntq"]
 
 [ext_resource type="Script" path="res://Asset/Scripts/Main.gd" id="1_dfv5q"]
-[ext_resource type="Texture2D" uid="uid://dodrrwklj5rj4" path="res://images/Png/whiteSquare.png" id="2_hieye"]
+[ext_resource type="Texture2D" uid="uid://djgsa68uqg0ft" path="res://images/Png/whiteSquare.png" id="2_hieye"]
 [ext_resource type="Script" path="res://Asset/Scripts/mouse.gd" id="3_ox8vj"]
 [ext_resource type="Script" path="res://Asset/Scripts/Label.gd" id="4_fnutm"]
-[ext_resource type="AudioStream" uid="uid://lkcaa2628y27" path="res://audio/Scratch_Sounds/long_Scratch2.wav" id="5_8qyuo"]
+[ext_resource type="AudioStream" uid="uid://c0ta1f4j1htdw" path="res://audio/Scratch_Sounds/long_Scratch2.wav" id="5_8qyuo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kpr5b"]
 font_size = 35
 font_color = Color(0.647059, 0.352941, 0.054902, 1)
 
 [node name="Wolrd" type="Node2D"]
+z_index = 10
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_dfv5q")
 
 [node name="CC" type="Sprite2D" parent="."]
-self_modulate = Color(0.470588, 0.207843, 0.00392157, 1)
+self_modulate = Color(0.141176, 0.470588, 0.592157, 1)
 z_index = -1
 z_as_relative = false
-position = Vector2(1274, 871)
-scale = Vector2(11.88, 6.59082)
+position = Vector2(537.5, 371.5)
+scale = Vector2(2.294, 1.56287)
 texture = ExtResource("2_hieye")
 script = ExtResource("3_ox8vj")
 
 [node name="PT" type="Label" parent="."]
+visible = false
 top_level = true
 offset_right = 895.0
 offset_bottom = 269.0

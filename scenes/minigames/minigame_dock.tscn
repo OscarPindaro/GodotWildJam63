@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/minigames/MinigameDock.gd" id="1_dii1i"]
 [ext_resource type="PackedScene" uid="uid://cf1rd7mguhp08" path="res://scenes/menu/end_scene.tscn" id="2_5wf5d"]
-[ext_resource type="AudioStream" uid="uid://dnlwhcyv2j3ra" path="res://audio/Music/InGameMusic.wav" id="2_88opq"]
+[ext_resource type="AudioStream" uid="uid://dmlyta24k6gti" path="res://audio/Music/InGameMusic.wav" id="2_88opq"]
 
 [node name="MinigameDock" type="Node" groups=["controller"]]
 script = ExtResource("1_dii1i")

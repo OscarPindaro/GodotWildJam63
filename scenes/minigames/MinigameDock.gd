@@ -35,7 +35,7 @@ func _startMinigame(minigame):
 	#var instance = load(minigamePath).instantiate() 
 	music_player.stop()
 	_minigame_started.emit()
-	var instance = minigame.instantiate() 
+	var instance = minigame.instantiate(0)
 	#print(minigamePath)
 	#var instance = new()
 	add_child(instance)
