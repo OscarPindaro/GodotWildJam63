@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://sljqfmqu7jyn"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3fafs"]
-[ext_resource type="Texture2D" uid="uid://pdfsywqteu2o" path="res://images/CAT ANIMATION SHEET.png" id="3_dou0k"]
-[ext_resource type="Texture2D" uid="uid://d06akftnq2kxa" path="res://images/climb-tenda/E.png" id="3_wolqi"]
+[ext_resource type="Texture2D" uid="uid://vftj4bsutjsq" path="res://images/CAT ANIMATION SHEET.png" id="3_dou0k"]
+[ext_resource type="Texture2D" uid="uid://dc60t00sdpayu" path="res://images/climb-tenda/E.png" id="3_wolqi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwmol"]
 atlas = ExtResource("3_dou0k")

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/CrocchetaBag.gd" id="1_qovpg"]
 [ext_resource type="PackedScene" uid="uid://c5fen4omtcxep" path="res://scenes/minigames/Crocchette/crocchetta.tscn" id="2_nuor6"]
-[ext_resource type="Texture2D" uid="uid://cb8ijmfugtcjv" path="res://images/crocchetta/CROCCHETTS GAME BAG.png" id="3_63h78"]
-[ext_resource type="AudioStream" uid="uid://cv02cltu8346i" path="res://audio/Shake_treats/Shaking_Loop.wav" id="4_3sr8k"]
+[ext_resource type="Texture2D" uid="uid://clvpfhx40kem1" path="res://images/crocchetta/CROCCHETTS GAME BAG.png" id="3_63h78"]
+[ext_resource type="AudioStream" uid="uid://cf6d8mm2uar6d" path="res://audio/Shake_treats/Shaking_Loop.wav" id="4_3sr8k"]
 
 [node name="CrocchettaBag" type="Area2D"]
 script = ExtResource("1_qovpg")
@@ -25,6 +25,7 @@ wait_time = 0.1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3sr8k")
+volume_db = 2.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-262, 219, 165, 237, 222, 182, 210, -145, 137, -241, -208, -247, -208, -91, -259, 78)

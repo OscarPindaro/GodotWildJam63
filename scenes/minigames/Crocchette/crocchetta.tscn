@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5fen4omtcxep"]
 
 [ext_resource type="Script" path="res://scenes/minigames/Crocchette/croccheta.gd" id="1_qn1q4"]
-[ext_resource type="Texture2D" uid="uid://chhkveja5h25t" path="res://images/crocchetta/CROCCHETTS GAME CROCCHETT.png" id="2_8t1pj"]
-[ext_resource type="AudioStream" uid="uid://e2h4kvh6h4sm" path="res://audio/Shake_treats/Falling_Treats5.wav" id="3_7ej83"]
+[ext_resource type="Texture2D" uid="uid://dbwkbxmmwfcyj" path="res://images/crocchetta/CROCCHETTS GAME CROCCHETT.png" id="2_8t1pj"]
+[ext_resource type="AudioStream" uid="uid://di6v8nqnufxrs" path="res://audio/Shake_treats/Falling_Treats5.wav" id="3_7ej83"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svih3"]
 radius = 8.94384
@@ -18,6 +18,8 @@ inertia = 1.0
 script = ExtResource("1_qn1q4")
 
 [node name="Crocchetta" type="Sprite2D" parent="."]
+z_index = 10
+y_sort_enabled = true
 position = Vector2(2, 0.999999)
 rotation = -0.397977
 scale = Vector2(0.5, 0.5)
