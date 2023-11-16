@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://m1d5cyof348t"]
+[gd_scene load_steps=16 format=3 uid="uid://m1d5cyof348t"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/main_menu.gd" id="1_46i64"]
 [ext_resource type="FontFile" uid="uid://c54ohorrrae6l" path="res://images/DustDemonBold.ttf" id="2_vdvl5"]
 [ext_resource type="PackedScene" uid="uid://3r1qgihc1y7n" path="res://scenes/map/room_1.tscn" id="2_yojc0"]
 [ext_resource type="FontFile" uid="uid://y5x3b1wc4707" path="res://images/HandwritingCR-2.ttf" id="3_20qo5"]
+[ext_resource type="LabelSettings" uid="uid://dx5styv2m1vu1" path="res://scenes/menu/title_label_setting.tres" id="4_ht7in"]
 [ext_resource type="AudioStream" uid="uid://b2suxgvyy8snf" path="res://audio/Music/Menu_Music.wav" id="5_1qq6q"]
 [ext_resource type="Script" path="res://scenes/menu/scripts/CommandsOverlay.gd" id="5_t2sha"]
 [ext_resource type="Script" path="res://scenes/menu/scripts/CreditsOverlay.gd" id="6_ea1co"]
@@ -53,13 +54,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -394.0
-offset_top = 200.0
+offset_top = 160.0
 offset_right = 394.0
-offset_bottom = 324.0
+offset_bottom = 356.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_vdvl5")
 theme_override_font_sizes/font_size = 80
-text = "CAT-ASTROPHE"
+text = "SHIRLEY"
+label_settings = ExtResource("4_ht7in")
+horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="."]
 z_index = 6
